@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid';
 import { useState } from 'react';
 import { SlideShowNavButton } from './SlideShowNavButton';
 
-export const SlideShow = ({ images }) => {
+export const SlideShow = ({ images, cardWidth }) => {
   const [activeSlide, setActiveSlide] = useState(0);
 
   const handleSlideShowNav = (direction) => {
@@ -22,6 +22,7 @@ export const SlideShow = ({ images }) => {
     <div className='relative flex w-full flex-row items-center justify-between '>
       {images.map((image) => (
         <Slide
+          cardWidth={cardWidth}
           key={nanoid()}
           image={image === images[activeSlide] ? image : null}
         />

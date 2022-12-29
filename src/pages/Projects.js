@@ -9,7 +9,7 @@ export const Projects = () => {
 
   return (
     <article
-      className={`flex flex-wrap justify-items-center  gap-8 px-4 py-2  md:justify-evenly md:p-6`}
+      className={`flex flex-wrap justify-items-center gap-x-6 gap-y-10 px-4 py-2 md:justify-evenly md:p-6`}
     >
       {projectsList}
     </article>

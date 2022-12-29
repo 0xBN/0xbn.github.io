@@ -14,8 +14,16 @@ function App() {
   }, [pageLoaded]);
 
   useEffect(() => {
-    setIsWindowSmall(window.innerWidth < 768);
+    const updateWindowDimensions = () => {
+      const newWidth = window.innerWidth;
+      setIsWindowSmall(newWidth < 768);
+    };
 
+    window.addEventListener('resize', updateWindowDimensions);
+    return () => window.removeEventListener('resize', updateWindowDimensions);
+  }, []);
+
+  useEffect(() => {
     // SAVE DARK THEME IN LOCAL STORAGE
     if (localStorage.darkTheme === undefined) {
       localStorage.setItem('darkTheme', 'true');
