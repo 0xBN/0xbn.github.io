@@ -16,7 +16,7 @@ export const ProjectCard = ({ project }) => {
       <Carousel images={project.images} />
 
       <div className='flex flex-col gap-2 p-2'>
-        <h3 className='text-center text-4xl font-bold'>
+        <h3 className='text-center text-3xl font-bold'>
           <SvgAndLabel
             iconPlacement='left'
             label={project.name}
