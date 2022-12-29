@@ -10,8 +10,9 @@ import { CardLinkOut } from './CardLinkOut';
 export const ProjectCard = ({ project }) => {
   return (
     <div
-      className='flex w-full flex-col gap-6 overflow-hidden rounded-xl bg-slate-200 p-2 text-xl shadow-md shadow-black/30
-    dark:bg-slate-700 md:max-w-[400px] md:p-4'
+      className={`flex w-full flex-col gap-6 overflow-hidden rounded-xl bg-slate-200 p-2 text-xl shadow-md shadow-black/30
+      dark:bg-slate-700 md:max-w-[400px]
+       md:p-4`}
     >
       <Carousel images={project.images} />
 

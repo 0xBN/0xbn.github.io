@@ -119,6 +119,51 @@ export const projects = [
     link: `https://0xbn.github.io/hidden-objects-game/`,
     code: `https://github.com/0xBN/hidden-objects-game`,
   },
+  {
+    id: 4,
+    name: `3Where's Waldo?`,
+    images: [
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Eo_circle_blue_number-7.svg/2048px-Eo_circle_blue_number-7.svg.png`,
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Eo_circle_blue_number-8.svg/2048px-Eo_circle_blue_number-8.svg.png`,
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Eo_circle_purple_number-9.svg/1024px-Eo_circle_purple_number-9.svg.png`,
+      `https://www.pngmart.com/files/14/10-Number-PNG-HD.png`,
+    ],
+    technologies: ['firebase', 'react', 'html', 'css', 'javascript'],
+    description: 'Game where the user finds objects on screen.',
+    challenges: `Tagged location of object same on different client window sizes, first experience using Firebase to write and save to docs for leaderboard tracking`,
+    link: `https://0xbn.github.io/hidden-objects-game/`,
+    code: `https://github.com/0xBN/hidden-objects-game`,
+  },
+  {
+    id: 5,
+    name: `3Where's Waldo?`,
+    images: [
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Eo_circle_blue_number-7.svg/2048px-Eo_circle_blue_number-7.svg.png`,
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Eo_circle_blue_number-8.svg/2048px-Eo_circle_blue_number-8.svg.png`,
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Eo_circle_purple_number-9.svg/1024px-Eo_circle_purple_number-9.svg.png`,
+      `https://www.pngmart.com/files/14/10-Number-PNG-HD.png`,
+    ],
+    technologies: ['firebase', 'react', 'html', 'css', 'javascript'],
+    description: 'Game where the user finds objects on screen.',
+    challenges: `Tagged location of object same on different client window sizes, first experience using Firebase to write and save to docs for leaderboard tracking`,
+    link: `https://0xbn.github.io/hidden-objects-game/`,
+    code: `https://github.com/0xBN/hidden-objects-game`,
+  },
+  {
+    id: 6,
+    name: `3Where's Waldo?`,
+    images: [
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Eo_circle_blue_number-7.svg/2048px-Eo_circle_blue_number-7.svg.png`,
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Eo_circle_blue_number-8.svg/2048px-Eo_circle_blue_number-8.svg.png`,
+      `https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Eo_circle_purple_number-9.svg/1024px-Eo_circle_purple_number-9.svg.png`,
+      `https://www.pngmart.com/files/14/10-Number-PNG-HD.png`,
+    ],
+    technologies: ['firebase', 'react', 'html', 'css', 'javascript'],
+    description: 'Game where the user finds objects on screen.',
+    challenges: `Tagged location of object same on different client window sizes, first experience using Firebase to write and save to docs for leaderboard tracking`,
+    link: `https://0xbn.github.io/hidden-objects-game/`,
+    code: `https://github.com/0xBN/hidden-objects-game`,
+  },
 ];
 
 export const techIcons = {
