@@ -6,7 +6,7 @@ export const ThemeToggle = ({ darkMode, toggleTheme, isWindowSmall }) => {
   let label = darkMode ? 'dark' : 'light';
   return (
     <button
-      className='font-bold active:bg-transparent  md:text-3xl md:hover:bg-orange-400 md:dark:hover:bg-yellow-600'
+      className='rounded-md font-bold active:bg-transparent md:text-3xl md:hover:bg-orange-400 md:dark:hover:bg-yellow-600'
       onClick={toggleTheme}
     >
       <SvgAndLabel
