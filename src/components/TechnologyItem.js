@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { SvgAndLabel } from 'components';
 import { techIcons, techWordUpperCase, techWebsites } from 'data';
 

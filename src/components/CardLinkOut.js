@@ -1,5 +1,5 @@
 import React from 'react';
-import { SvgAndLabel, Button } from 'components';
+import { Button } from 'components';
 import { GithubSvg, ExternalLinkSvg } from 'svgs';
 
 export const CardLinkOut = ({ codeLink, liveLink }) => {

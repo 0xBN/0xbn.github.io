@@ -15,27 +15,24 @@ This project is a personal portfolio website used to showcase projects and share
 
 
 
----------------------
----------------------
+
 
 ## Tech Stack
 - [ React ](https://github.com/facebook/create-react-app): Frontend
 - [ Tailwind CSS](https://tailwindcss.com/): Styling
 - [Github](https://github.com/): Deployment
   
----------------------
----------------------
+
 
 ## How to Use
 
+Edit your personal information in the userData.js (data is in json format). 
 | Directory | Edits |
 | ----------- | ----------- |
 | './src/pages' | section details |
 | './src/data/userData.js' | contact details, project cards, technology icons, and websites  |
-|
 
----------------------
----------------------
+
 ## Notable Features
 ** Desktop(D) Only and Mobile(M) Only
 - Responsive Single Page App
@@ -48,15 +45,12 @@ This project is a personal portfolio website used to showcase projects and share
 - D: Smooth scroll to section
 - Technology buttons for project card links to official site or documentation
 
----------------------
----------------------
+
 
 ## Icons
 - https://devicon.dev/
 - https://heroicons.dev/
 
-----------------------
----------------------
 
 ## Available Scripts
 

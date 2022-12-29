@@ -1,5 +1,4 @@
 import React from 'react';
-import { nanoid } from 'nanoid';
 
 export const Pagination = ({ activeSlide, total, setActiveSlide }) => {
   const handlePaginationClick = (e) => setActiveSlide(Number(e.target.id));

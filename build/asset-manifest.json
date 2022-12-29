@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/p_v3/static/css/main.32f45d2e.css",
-    "main.js": "/p_v3/static/js/main.21af9d6f.js",
-    "static/media/2.png": "/p_v3/static/media/2.45e57951b046615d40b6.png",
-    "static/media/3.png": "/p_v3/static/media/3.e7376ebdd475169aeaed.png",
-    "static/media/lightBrianV2.png": "/p_v3/static/media/lightBrianV2.a367a551e5915b5bd06b.png",
-    "static/media/darkBrianV2.png": "/p_v3/static/media/darkBrianV2.c9d7e88b3390a5247747.png",
-    "static/media/1.png": "/p_v3/static/media/1.c9e28277207549cabaf0.png",
-    "index.html": "/p_v3/index.html",
-    "main.32f45d2e.css.map": "/p_v3/static/css/main.32f45d2e.css.map",
-    "main.21af9d6f.js.map": "/p_v3/static/js/main.21af9d6f.js.map"
+    "main.css": "/static/css/main.acd579ba.css",
+    "main.js": "/static/js/main.a8ca066a.js",
+    "static/media/2.png": "/static/media/2.45e57951b046615d40b6.png",
+    "static/media/3.png": "/static/media/3.e7376ebdd475169aeaed.png",
+    "static/media/lightBrianV2.png": "/static/media/lightBrianV2.a367a551e5915b5bd06b.png",
+    "static/media/darkBrianV2.png": "/static/media/darkBrianV2.c9d7e88b3390a5247747.png",
+    "static/media/1.png": "/static/media/1.c9e28277207549cabaf0.png",
+    "index.html": "/index.html",
+    "main.acd579ba.css.map": "/static/css/main.acd579ba.css.map",
+    "main.a8ca066a.js.map": "/static/js/main.a8ca066a.js.map"
   },
   "entrypoints": [
-    "static/css/main.32f45d2e.css",
-    "static/js/main.21af9d6f.js"
+    "static/css/main.acd579ba.css",
+    "static/js/main.a8ca066a.js"
   ]
 }
