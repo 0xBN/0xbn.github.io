@@ -4,7 +4,7 @@ import { user } from 'data';
 
 export const About = ({ darkMode, pageLoaded }) => {
   return (
-    <div className='text-md py-4 px-6 md:flex md:flex-col md:justify-center md:text-3xl'>
+    <div className='py-4 px-6 text-lg md:flex md:flex-col md:justify-center md:text-3xl'>
       <div className='mb-4 grid w-full place-content-center md:hidden'>
         <ProfilePicture
           darkMode={darkMode}
