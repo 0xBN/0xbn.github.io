@@ -37,7 +37,7 @@ export const MenuItem = ({
           customSvgColor={
             isActive
               ? 'fill-primaryLight dark:fill-primaryDark'
-              : 'fill-secondaryLight dark:fill-secondaryDark'
+              : 'fill-primaryLight/50 dark:fill-primaryDark/50'
           }
         />
       </div>
