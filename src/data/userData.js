@@ -90,15 +90,14 @@ export const projects = [
     description: 'A frontend clone of the Airbnb website.',
     purpose: `Learn React's reuseable components, routing and props. Refine HTML skills: flexbox, margin, padding, sticky elements.`,
     images: [
-      'https://i.imgur.com/yexhYhI.gif',
-      'https://i.imgur.com/FaVGGWd.gif',
-      'https://i.imgur.com/xKp7QUZ.gif',
-      'https://i.imgur.com/c33N0aX.gif',
+      'https://i.imgur.com/adg4VBy.gif',
+      'https://i.imgur.com/RBtsfqS.gif',
+      'https://i.imgur.com/N6Nd4QE.gif',
     ],
     technologies: ['react', 'javascript', 'css', 'Firebase'],
 
-    link: `0xbn.github.io`,
-    code: `https://github.com/0xBN/0xbn.github.io`,
+    link: `https://airbnb-clone-cuge.onrender.com/`,
+    code: `https://github.com/0xBN/airbnb-clone`,
   },
 ];
 
