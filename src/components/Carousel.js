@@ -5,13 +5,8 @@ import { SlideShow } from 'components';
 export const Carousel = ({ images, cardWidth }) => {
   if (images.length === 0) return;
 
-  console.log(cardWidth);
-
   const oldSettings = `md:max-w-[400px]`;
   const newSettings = cardWidth;
-  // const newSettings = `md:w-[64rem]`;
-  // 3xl = 48rem
-  // 5xl = 64rem
 
   return (
     <div

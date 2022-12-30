@@ -3,6 +3,7 @@ import { techIcons, techWordUpperCase, techWebsites } from 'data';
 
 export const TechnologyItem = ({ item }) => {
   if (!item) return;
+  item = item.toLowerCase();
 
   const formatTechnology = (word) => {
     if (techWordUpperCase.includes(word)) {

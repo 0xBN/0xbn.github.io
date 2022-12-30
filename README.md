@@ -2,6 +2,14 @@
 
 This project is a personal portfolio website used to showcase projects and share relevant experience. It is open sourced and can be forked. Users only need to edit a json file with relevant data (see section: How To Use).
 
+## Demonstration
+
+| Demo | Mobile | Desktop |
+| ----------- | ----------- | ----------- |
+| Dark/Light Mode | <img src="https://i.imgur.com/yexhYhI.gif" width="250px"/> | <img src="https://i.imgur.com/c33N0aX.gif" width="250px"/> |
+| Full scroll | <img src="https://i.imgur.com/FaVGGWd.gif" width="250px"/> | <img src="https://i.imgur.com/xKp7QUZ.gif" width="250px"/> |
+
+
 ## Purpose
 I built this to showcase my projects, but also to refine my React and Tailwind CSS skills.
 
@@ -11,12 +19,6 @@ I built this to showcase my projects, but also to refine my React and Tailwind C
 - Animation: scroll between sections, landing page
 - React components extraction
 
-## Demonstration
-
-| Demo | Mobile | Desktop |
-| ----------- | ----------- | ----------- |
-| Dark/Light Mode | <img src="https://i.imgur.com/yexhYhI.gif" width="250px"/> | <img src="https://i.imgur.com/c33N0aX.gif" width="250px"/> |
-| Full scroll | <img src="https://i.imgur.com/FaVGGWd.gif" width="250px"/> | <img src="https://i.imgur.com/xKp7QUZ.gif" width="250px"/> |
 
 
 
