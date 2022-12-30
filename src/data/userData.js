@@ -67,8 +67,11 @@ export const user = {
 export const projects = [
   {
     id: 1,
-    name: `Where's Waldo?`,
-    description: 'Game where the user finds objects on screen.',
+    name: `Portfolio Website`,
+    description:
+      'Used to showcase projects and share relevant experience. It is open sourced and can be forked. Users can edit their information in a json-formatted file.',
+    purpose:
+      'Showcase my personal projects, but also to refine my React and Tailwind CSS skills.',
     challenges: `Tagged location of object same on different client window sizes, first experience using Firebase to write and save to docs for leaderboard tracking`,
     images: ['https://i.imgur.com/8v3okP7.gif', img1, img2, img3],
     technologies: [

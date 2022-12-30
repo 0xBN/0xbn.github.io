@@ -49,9 +49,13 @@ export const ProjectCard = ({ project }) => {
         <p>
           <EmphasizedWord word='Description' /> {project.description}
         </p>
-        <p>
+        {/* <p>
           <EmphasizedWord word='Challenges ' />
           {project.challenges}
+        </p> */}
+        <p>
+          <EmphasizedWord word='Purpose ' />
+          {project.purpose}
         </p>
 
         <CardLinkOut codeLink={project.code} liveLink={project.link} />

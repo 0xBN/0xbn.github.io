@@ -1,9 +1,17 @@
 # Personal Portfolio Website
 
-This project is a personal portfolio website used to showcase projects and share relevant experience. 
+This project is a personal portfolio website used to showcase projects and share relevant experience. It is open sourced and can be forked. Users only need to edit a json file with relevant data (see section: How To Use).
 
+## Purpose
+I built this to showcase my projects, but also to refine my React and Tailwind CSS skills.
 
+## Skills Demonstrated
+- Responsive design (navigation bar and sections)
+- Carousel built without templates
+- Animation: scroll between sections, landing page
+- React components extraction
 
+## Demonstration
 
 | Demo | Mobile | Desktop |
 | ----------- | ----------- | ----------- |
