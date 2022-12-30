@@ -2,8 +2,8 @@
 
 This project is a personal portfolio website used to showcase projects and share relevant experience. It is open sourced and can be forked. Users only need to edit a json file with relevant data (see section: How To Use).
 
-## Live Deploy
-https://0xbn.github.io
+## Deployed At: https://0xbn.github.io
+
 
 ## Demonstration
 
