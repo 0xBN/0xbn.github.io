@@ -86,7 +86,7 @@ export const projects = [
   },
   {
     id: 2,
-    name: `Airbnb Frontend Clone`,
+    name: `Airbnb Frontend`,
     description: 'A frontend clone of the Airbnb website.',
     purpose: `Learn React's reuseable components, routing and props. Refine HTML skills: flexbox, margin, padding, sticky elements.`,
     images: [
