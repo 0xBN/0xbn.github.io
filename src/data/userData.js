@@ -1,6 +1,3 @@
-const img1 = require('../shared/img/1.png');
-const img2 = require('../shared/img/2.png');
-const img3 = require('../shared/img/3.png');
 const {
   ReactSvg,
   FirebaseSvg,
@@ -98,6 +95,21 @@ export const projects = [
 
     link: `https://airbnb-clone-cuge.onrender.com/`,
     code: `https://github.com/0xBN/airbnb-clone`,
+  },
+  {
+    id: 3,
+    name: `Piano Tunes`,
+    description:
+      'Piano keyboard simulation with some tunes for the user to follow. Best experienced with a keyboard.',
+    purpose: `A fun app to build dealing with audio and state. Built with React and styled with Tailwind.`,
+    images: [
+      'https://github.com/0xBN/gif_pub/blob/main/pianoTunes/mobile.gif?raw=true',
+      'https://github.com/0xBN/gif_pub/blob/main/pianoTunes/desktop.gif?raw=true',
+    ],
+    technologies: ['react', 'javascript', 'tailwind'],
+
+    link: `https://piano-tunes.onrender.com/`,
+    code: `https://github.com/0xBN/piano_tunes`,
   },
 ];
 
