@@ -14,6 +14,13 @@ function App() {
   }, [pageLoaded]);
 
   useEffect(() => {
+    const setWindowSize = () => {
+      setIsWindowSmall(window.innerWidth < 768);
+    };
+    setWindowSize();
+  }, []);
+
+  useEffect(() => {
     const updateWindowDimensions = () => {
       const newWidth = window.innerWidth;
       setIsWindowSmall(newWidth < 768);
@@ -21,7 +28,7 @@ function App() {
 
     window.addEventListener('resize', updateWindowDimensions);
     return () => window.removeEventListener('resize', updateWindowDimensions);
-  }, []);
+  });
 
   useEffect(() => {
     // SAVE DARK THEME IN LOCAL STORAGE
