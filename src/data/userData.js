@@ -111,6 +111,21 @@ export const projects = [
     link: `https://piano-tunes.onrender.com/`,
     code: `https://github.com/0xBN/piano_tunes`,
   },
+  {
+    id: 4,
+    name: `Custom Gallery`,
+    description:
+      'Smooth gallery component that expands and contracts based on user clicks.',
+    purpose: `Practice responsive design and smooth animations`,
+    images: [
+      'https://github.com/0xBN/gif_pub/blob/main/js_gallery/desktopV2.gif?raw=true',
+      'https://github.com/0xBN/gif_pub/blob/main/js_gallery/mobile.gif?raw=true',
+    ],
+    technologies: ['react', 'javascript', 'tailwind', 'css'],
+
+    link: `https://coruscating-bombolone-1fe251.netlify.app/`,
+    code: `https://github.com/0xBN/js_gallery`,
+  },
 ];
 
 export const techIcons = {
