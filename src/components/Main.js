@@ -80,8 +80,17 @@ export const Main = ({
       </div>
 
       <div ref={projectsRef}>
-        <motion.div initial={{ opacity: 0 }} animate={projectAnimation}>
-          <Section id='projects' title='Projects' content={<Projects />} />
+        <motion.div
+          className={``}
+          initial={{ opacity: 0 }}
+          animate={projectAnimation}
+        >
+          <Section
+            className={``}
+            id='projects'
+            title='Projects'
+            content={<Projects />}
+          />
         </motion.div>
       </div>
 

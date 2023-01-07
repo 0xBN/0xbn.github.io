@@ -23,16 +23,20 @@ export const ProjectCard = ({ project }) => {
     return () => window.removeEventListener('resize', updateWindowDimensions);
   }, []);
 
-  const oldSettings = `md:max-w-[400px]`;
-
   const calcCardWidth = () => {
     return window.innerWidth < 1500 ? 'md:max-w-5xl' : 'md:max-w-xl';
   };
   const cardWidth = `${calcCardWidth()}`;
+
+  const newSettings = `border-2 border-white/30`;
+  const oldSettings = ``;
+
   return (
     <div
       className={`flex w-full flex-col gap-6 overflow-hidden rounded-xl bg-slate-200 p-2 text-xl shadow-md shadow-black/30 
-      dark:bg-slate-700  ${false && oldSettings} ${true && cardWidth}
+      dark:bg-slate-700  ${false && oldSettings} ${true && cardWidth} ${
+        true && newSettings
+      }
        md:p-4`}
     >
       <Carousel images={project.images} cardWidth={cardWidth} />
