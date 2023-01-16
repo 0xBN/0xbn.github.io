@@ -126,6 +126,21 @@ export const projects = [
     link: `https://coruscating-bombolone-1fe251.netlify.app/`,
     code: `https://github.com/0xBN/js_gallery`,
   },
+  {
+    id: 5,
+    name: `Breakout Game`,
+    description:
+      'Breakout game made using React, Tailwind CSS and HTML5 Canvas API. ',
+    purpose: `Learn Canvas API and practice using custom hooks`,
+    images: [
+      'https://github.com/0xBN/gif_pub/blob/main/breakout_game/desktop.gif?raw=true',
+      'https://github.com/0xBN/gif_pub/blob/main/breakout_game/mobile.gif?raw=true',
+    ],
+    technologies: ['react', 'javascript', 'tailwind', 'css'],
+
+    link: `https://breakout-react.onrender.com/`,
+    code: `https://github.com/0xBN/breakout_game`,
+  },
 ];
 
 export const techIcons = {
