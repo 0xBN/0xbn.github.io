@@ -141,6 +141,20 @@ export const projects = [
     link: `https://breakout-react.onrender.com/`,
     code: `https://github.com/0xBN/breakout_game`,
   },
+  {
+    id: 6,
+    name: `Pacman (WIP)`,
+    description:
+      'Pacman game currently a work in progress. Github for development updates',
+    purpose: `Learn custom hooks, pathfinding algorithm.`,
+    images: [
+      'https://github.com/0xBN/gif_pub/blob/main/pacman/desktop.gif?raw=true',
+    ],
+    technologies: ['react', 'javascript', 'tailwind', 'css'],
+
+    link: `https://pacman-react.onrender.com/`,
+    code: `https://github.com/0xBN/pacman_v1`,
+  },
 ];
 
 export const techIcons = {
