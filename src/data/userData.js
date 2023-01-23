@@ -28,7 +28,7 @@ export const user = {
   calendly: 'https://www.calendly.com/brianvbn',
   email: 'brianvbn@gmail.com',
   resume:
-    'https://drive.google.com/file/d/12P-I_R4n3aclON9pkm5w6Vf28OMgwOvY/view?usp=share_link',
+    'https://drive.google.com/file/d/1mP4akPt1aEvl1ZH0pI8cUwCj-ie7FcXt/view?usp=sharing',
   profilePicLight: lightBrian,
   profilePicDark: darkBrian,
   hero: {
