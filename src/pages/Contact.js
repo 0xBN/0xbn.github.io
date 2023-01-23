@@ -14,11 +14,6 @@ export const Contact = () => {
   return (
     <div className='relative flex flex-col gap-4 p-4 text-2xl md:p-8'>
       <ContactOption
-        label={user.phone}
-        link={`tel:${user.phone}`}
-        svg={<PhoneSvg />}
-      />
-      <ContactOption
         label={user.email}
         link={`mailto:${user.email}`}
         svg={<MailSvg />}

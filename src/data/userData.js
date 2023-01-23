@@ -27,14 +27,13 @@ export const user = {
   linkedin: 'https://www.linkedin.com/in/brianvbn',
   calendly: 'https://www.calendly.com/brianvbn',
   email: 'brianvbn@gmail.com',
-  phone: '+1-312-715-8602',
   resume:
-    'https://docs.google.com/document/d/1m7h-aZfQY0XD6neiBvEQkXJHwUIJjDuu/edit?usp=sharing&ouid=103781869510772888871&rtpof=true&sd=true',
+    'https://drive.google.com/file/d/12P-I_R4n3aclON9pkm5w6Vf28OMgwOvY/view?usp=share_link',
   profilePicLight: lightBrian,
   profilePicDark: darkBrian,
   hero: {
     line1:
-      'Self-driven, quick-starter, passionate developer with a curious mind.',
+      'Self-driven, quick-starter, passionate developer with a curious mind and strong drive to continuously learn and improve.',
     line2: 'I enjoy solving complex and challenging real-world problems.',
   },
   about: {
@@ -70,10 +69,9 @@ export const projects = [
     id: 1,
     name: `Portfolio Website`,
     description:
-      'Used to showcase projects and share relevant experience. It is open sourced and can be forked. Users can edit their information in a json-formatted file.',
+      'Web app designed to display and share personal projects and relevant experiences, it is open-sourced, allowing users to fork the code and edit their own information in a JSON formatted file.',
     purpose:
-      'Showcase my personal projects, but also to refine my React and Tailwind CSS skills.',
-    challenges: `Tagged location of object same on different client window sizes, first experience using Firebase to write and save to docs for leaderboard tracking`,
+      'Demonstrate my personal projects and to improve my proficiency in React and Tailwind CSS.',
     images: [
       'https://i.imgur.com/yexhYhI.gif',
       'https://i.imgur.com/FaVGGWd.gif',
@@ -89,7 +87,7 @@ export const projects = [
     id: 2,
     name: `Airbnb Frontend`,
     description: 'A frontend clone of the Airbnb website.',
-    purpose: `Learn React's reuseable components, routing and props. Refine HTML skills: flexbox, margin, padding, sticky elements.`,
+    purpose: `Gain experience with React's reusable components, routing and props, as well as refining my skills in HTML, specifically in flexbox, margin, padding and sticky elements.`,
     images: [
       'https://i.imgur.com/adg4VBy.gif',
       'https://i.imgur.com/RBtsfqS.gif',
@@ -105,7 +103,7 @@ export const projects = [
     name: `Piano Tunes`,
     description:
       'Piano keyboard simulation with some tunes for the user to follow. Best experienced with a keyboard.',
-    purpose: `A fun app to build dealing with audio and state. Built with React and styled with Tailwind.`,
+    purpose: `A playful application that focuses on audio manipulation and state management, developed using React and styled with Tailwind CSS.`,
     images: [
       'https://github.com/0xBN/gif_pub/blob/main/pianoTunes/mobile.gif?raw=true',
       'https://github.com/0xBN/gif_pub/blob/main/pianoTunes/desktop.gif?raw=true',
@@ -120,7 +118,7 @@ export const projects = [
     name: `Custom Gallery`,
     description:
       'Smooth gallery component that expands and contracts based on user clicks.',
-    purpose: `Practice responsive design and smooth animations`,
+    purpose: `Improve my skills in responsive design and smooth animations.`,
     images: [
       'https://github.com/0xBN/gif_pub/blob/main/js_gallery/desktopV2.gif?raw=true',
       'https://github.com/0xBN/gif_pub/blob/main/js_gallery/mobile.gif?raw=true',
@@ -149,7 +147,7 @@ export const projects = [
     id: 6,
     name: `Pacman (WIP)`,
     description:
-      'Pacman game currently a work in progress. Github for development updates',
+      'A Pacman game currently under development, follow the Github repository for updates on the progress.',
     purpose: `Learn custom hooks, pathfinding algorithm.`,
     images: [
       'https://github.com/0xBN/gif_pub/blob/main/pacman/desktop.gif?raw=true',
