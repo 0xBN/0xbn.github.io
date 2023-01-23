@@ -3,6 +3,12 @@ import React from 'react';
 import { user } from 'data';
 
 export const About = ({ darkMode, pageLoaded }) => {
+  const aboutSummaryContent = user.about.summary.map((line, index) => (
+    <div key={index}>
+      <p>{line}</p>
+      <br />
+    </div>
+  ));
   return (
     <div className='py-4 px-6 text-lg md:flex md:flex-col md:justify-center md:text-3xl'>
       <div className='mb-4 grid w-full place-content-center md:hidden'>
@@ -12,12 +18,8 @@ export const About = ({ darkMode, pageLoaded }) => {
           customRounded='rounded-md'
         />
       </div>
-      <p>{user.about.line1}</p>
-      <br />
-      <p>{user.about.line2}</p>
-      <br />
-      <p>{user.about.line3}</p>
-      <br />
+      {aboutSummaryContent}
+
       <p className='py-2 md:py-4'>
         <EmphasizedWord word='Languages ' />
         {user.about.languages.toString().replaceAll(',', ', ')}

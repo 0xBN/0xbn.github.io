@@ -37,12 +37,15 @@ export const user = {
     line2: 'I enjoy solving complex and challenging real-world problems.',
   },
   about: {
-    line1: 'I am a fullstack developer.',
-    line2: `Growing up, I have always had an affinity for everything tech related. I
-    loved exploring software mods for my devices and building PCs for my
-    friends during my free time.`,
-    line3: `Today I am passionate about developing applications that solve
-    real-world problems impacting millions of users.`,
+    summary: [
+      `After earning my Bachelor of Science in Economics from UC Davis, I held a variety of roles at Amazon, including operations management, launching a fulfillment center, program management for Amazon Freight, and campaign analysis for Amazon Advertising.`,
+      `I valued the opportunity to learn about different aspects of the business and acquire a wide range of skills. At Amazon, I often served as the technical point-person, handling tasks such as creating and manipulating excel spreadsheets, writing macros, and constructing automated reporting dashboards.`,
+      `    Later, I worked at a startup with college friends, where my responsibilities were primarily technical, including developing custom reports and overseeing the company's procedures for virtual assistants. Through this experience, I discovered my passion for utilizing technology and problem-solving in software development. `,
+      `    I then dedicated myself full-time to learning full-stack development through The Odin Project's curriculum. Today, I am thrilled with my progress in creating projects from start to finish, including both the backend and frontend logic. `,
+      `    I am eager to continue to improve my skills, with current personal objectives of improving proficiency in TypeScript, writing more effective testing code, and enhancing my algorithm visualization app. I am also actively seeking professional opportunities to apply and expand upon my skills. `,
+      `    In my spare time, I enjoy spending time with my two cats, exploring new restaurants in Chicago, and climbing at my local gym.`,
+    ],
+
     languages: ['Javascript(ES6+)', 'Typescript', 'HTML', 'CSS', 'Python'],
     frontend: ['Tailwind CSS', 'React'],
     backend: ['Node', 'MongoDB', 'Express', 'Firebase'],

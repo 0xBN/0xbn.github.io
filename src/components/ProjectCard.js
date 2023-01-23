@@ -16,7 +16,7 @@ export const ProjectCard = ({ project }) => {
     const updateWindowDimensions = () => {
       const newWidth = window.innerWidth;
       setWidth(newWidth);
-      console.log('updating width');
+      // console.log('updating width');
     };
 
     window.addEventListener('resize', updateWindowDimensions);
