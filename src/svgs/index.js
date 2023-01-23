@@ -34,3 +34,4 @@ export * from './RightChevronSvg';
 export * from './LeftChevronSvg';
 export * from './PhoneSvg';
 export * from './UpArrowSvg';
+export * from './CalendarSvg';

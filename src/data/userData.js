@@ -25,6 +25,7 @@ export const user = {
   title: 'Software Engineer',
   github: 'https://www.github.com/0xBN',
   linkedin: 'https://www.linkedin.com/in/brianvbn',
+  calendly: 'https://www.calendly.com/brianvbn',
   email: 'brianvbn@gmail.com',
   phone: '+1-312-715-8602',
   resume:

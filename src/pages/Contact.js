@@ -1,6 +1,13 @@
 import { ContactOption } from 'components';
 import React from 'react';
-import { DotPatternSvg, GithubSvg, LinkedinSvg, MailSvg, PhoneSvg } from 'svgs';
+import {
+  CalendarSvg,
+  DotPatternSvg,
+  GithubSvg,
+  LinkedinSvg,
+  MailSvg,
+  PhoneSvg,
+} from 'svgs';
 import { user } from '../data/userData';
 
 export const Contact = () => {
@@ -26,6 +33,12 @@ export const Contact = () => {
         label={user.linkedin.split('https://www.')[1]}
         link={user.linkedin}
         svg={<LinkedinSvg />}
+        newTab={true}
+      />
+      <ContactOption
+        label={user.calendly.split('https://www.')[1]}
+        link={user.calendly}
+        svg={<CalendarSvg />}
         newTab={true}
       />
 

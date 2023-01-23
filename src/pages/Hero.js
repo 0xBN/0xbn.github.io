@@ -6,6 +6,7 @@ import {
   MailSvg,
   DotPatternSvg,
   DownArrowSvg,
+  CalendarSvg,
 } from 'svgs';
 import { user } from 'data';
 import { animateHeroButtonsOptions, animateHeroTextOptions } from 'utils';
@@ -101,12 +102,24 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
           animate={slideRight}
         >
           <Button
+            svg={<CalendarSvg />}
+            label='Meet'
+            newTab
+            link={user.calendly}
+          />
+        </motion.div>
+        {/* <motion.div
+          initial={{ opacity: 0, x: -125 }}
+          custom={1}
+          animate={slideRight}
+        >
+          <Button
             svg={<LinkedinSvg />}
             label='LinkedIn'
             newTab
             link={user.linkedin}
           />
-        </motion.div>
+        </motion.div> */}
         <motion.div
           initial={{ opacity: 0, x: -125 }}
           custom={2}
