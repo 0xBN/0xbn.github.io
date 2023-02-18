@@ -157,6 +157,20 @@ export const projects = [
     link: `https://pacman-react.onrender.com/`,
     code: `https://github.com/0xBN/pacman_v1`,
   },
+  {
+    id: 7,
+    name: `Algo-Visualizer (WIP)`,
+    description:
+      'Algorithm visualizer currently under development (frontend complete, optimizing algorithms), follow the Github repository for updates on the progress.',
+    purpose: `Visualize how graph search algorithms work.`,
+    images: [
+      'https://github.com/0xBN/gif_pub/blob/main/algo-visualizer/Peek%202023-02-17%2017-50.gif?raw=true',
+    ],
+    technologies: ['react', 'javascript', 'tailwind', 'css'],
+
+    link: `https://0xbn.github.io/algo-visualizer/`,
+    code: `https://github.com/0xBN/algo-visualizer`,
+  },
 ];
 
 export const techIcons = {

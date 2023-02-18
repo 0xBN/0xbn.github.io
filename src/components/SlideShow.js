@@ -5,6 +5,7 @@ import { SlideShowNavButton } from './SlideShowNavButton';
 
 export const SlideShow = ({ images, cardWidth }) => {
   const [activeSlide, setActiveSlide] = useState(0);
+  console.log(images.length);
 
   const handleSlideShowNav = (direction) => {
     if (direction === 'next') {
@@ -27,14 +28,19 @@ export const SlideShow = ({ images, cardWidth }) => {
           image={image === images[activeSlide] ? image : null}
         />
       ))}
-      <SlideShowNavButton
-        handleSlideShowNav={handleSlideShowNav}
-        direction='prev'
-      />
-      <SlideShowNavButton
-        handleSlideShowNav={handleSlideShowNav}
-        direction='next'
-      />
+
+      {images.length > 1 && (
+        <>
+          <SlideShowNavButton
+            handleSlideShowNav={handleSlideShowNav}
+            direction='prev'
+          />
+          <SlideShowNavButton
+            handleSlideShowNav={handleSlideShowNav}
+            direction='next'
+          />
+        </>
+      )}
       <Pagination
         activeSlide={activeSlide}
         total={images.length}
