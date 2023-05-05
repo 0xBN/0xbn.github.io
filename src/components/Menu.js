@@ -60,7 +60,7 @@ export const Menu = ({
         currentSection={currentSection}
         setCurrentSection={setCurrentSection}
       />
-      <MenuItem
+      {/* <MenuItem
         setShowMenu={setShowMenu}
         link={user.resume}
         label='Resume'
@@ -70,7 +70,7 @@ export const Menu = ({
         newTab={true}
         currentSection={currentSection}
         setCurrentSection={setCurrentSection}
-      />
+      /> */}
     </ul>
   );
 };

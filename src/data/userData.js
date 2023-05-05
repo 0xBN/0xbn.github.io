@@ -25,30 +25,30 @@ export const user = {
   title: 'Software Engineer',
   github: 'https://www.github.com/0xBN',
   linkedin: 'https://www.linkedin.com/in/brianvbn',
-  calendly: 'https://www.calendly.com/brianvbn',
+  calendly: '',
   email: 'brianvbn@gmail.com',
-  resume:
-    'https://drive.google.com/file/d/1frIwIZLGy3XLr62onDzBcTShJbKK7Grd/view',
+  resume: '',
   profilePicLight: lightBrian,
   profilePicDark: darkBrian,
   hero: {
     line1:
-      'Self-driven, quick-starter, passionate developer with a curious mind and strong drive to continuously learn and improve.',
+      'Dedicated, curious developer with a desire to constantly learn and grow.',
     line2: 'I enjoy solving complex and challenging real-world problems.',
   },
   about: {
     summary: [
-      `After earning my Bachelor of Science in Economics from UC Davis, I held a variety of roles at Amazon, including operations management, launching a fulfillment center, program management for Amazon Freight, and campaign analysis for Amazon Advertising.`,
-      `I valued the opportunity to learn about different aspects of the business and acquire a wide range of skills. At Amazon, I often served as the technical point-person, handling tasks such as creating and manipulating excel spreadsheets, writing macros, and constructing automated reporting dashboards.`,
-      `    Later, I worked at a startup with college friends, where my responsibilities were primarily technical, including developing custom reports and overseeing the company's procedures for virtual assistants. Through this experience, I discovered my passion for utilizing technology and problem-solving in software development. `,
-      `    I then dedicated myself full-time to learning full-stack development through The Odin Project's curriculum. Today, I am thrilled with my progress in creating projects from start to finish, including both the backend and frontend logic. `,
-      `    I am eager to continue to improve my skills, with current personal objectives of improving proficiency in TypeScript, writing more effective testing code, and enhancing my algorithm visualization app. I am also actively seeking professional opportunities to apply and expand upon my skills. `,
-      `    In my spare time, I enjoy spending time with my two cats, exploring new restaurants in Chicago, and climbing at my local gym.`,
+      `After earning my BS in Economics from UC Davis, I explored various roles at Amazon, like operations management, fulfillment, and ad campaigns.`,
+      `At Amazon, I learned a lot and often took on technical tasks, working with spreadsheets, macros, and creating reporting dashboards.`,
+      `Later, I joined a startup with college friends, focusing on technical aspects like custom reports and virtual assistant processes, which sparked my interest in software development.`,
+      `I pursued full-stack development through The Odin Project and have enjoyed working on both backend and frontend projects.`,
+      `I'm enthusiastic about enhancing my skills, with a focus on frontend development, particularly 3D websites. I'm very inspired by the immersive experiences crafted by Resn (https://resn.co.nz/).`,
+      `Outside of work, I spend time with my two cats and my girlfriend, try out new restaurants in Chicago, and enjoy climbing at a local gym.`,
     ],
 
     languages: ['Javascript(ES6+)', 'Typescript', 'HTML', 'CSS', 'Python'],
-    frontend: ['Tailwind CSS', 'React'],
-    backend: ['Node', 'MongoDB', 'Express', 'Firebase'],
+    frontend: ['React', 'Tailwind CSS'],
+    fullStack: ['Next.js'],
+    backend: ['Node', 'Express', 'MongoDB', 'Firebase'],
     otherTechnologies: [
       'Redux',
       'Jest',

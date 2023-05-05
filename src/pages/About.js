@@ -29,11 +29,15 @@ export const About = ({ darkMode, pageLoaded }) => {
         {user.about.frontend.toString().replaceAll(',', ', ')}
       </p>
       <p className='py-2 md:py-4'>
+        <EmphasizedWord word='Full-stack ' />
+        {user?.about?.fullStack?.toString().replaceAll(',', ', ')}
+      </p>
+      <p className='py-2 md:py-4'>
         <EmphasizedWord word='Backend ' />
         {user.about.backend.toString().replaceAll(',', ', ')}
       </p>
       <p className='py-2 md:py-4'>
-        <EmphasizedWord word='Other Technologies ' />
+        <EmphasizedWord word='Tools & Libraries ' />
         {user.about.otherTechnologies.toString().replaceAll(',', ', ')}
       </p>
     </div>
