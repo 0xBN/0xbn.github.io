@@ -96,7 +96,7 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
             link={user.github}
           />
         </motion.div>
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: -125 }}
           custom={1}
           animate={slideRight}
@@ -107,8 +107,8 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
             newTab
             link={user.calendly}
           />
-        </motion.div>
-        {/* <motion.div
+        </motion.div> */}
+        <motion.div
           initial={{ opacity: 0, x: -125 }}
           custom={1}
           animate={slideRight}
@@ -119,7 +119,7 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
             newTab
             link={user.linkedin}
           />
-        </motion.div> */}
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, x: -125 }}
           custom={2}

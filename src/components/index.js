@@ -1,4 +1,4 @@
-export * from './AboutMe';
+
 export * from './Footer';
 export * from './Main';
 export * from './NavBar';

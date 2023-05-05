@@ -5,7 +5,6 @@ import { SlideShowNavButton } from './SlideShowNavButton';
 
 export const SlideShow = ({ images, cardWidth }) => {
   const [activeSlide, setActiveSlide] = useState(0);
-  console.log(images.length);
 
   const handleSlideShowNav = (direction) => {
     if (direction === 'next') {
