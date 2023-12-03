@@ -1,37 +1,7 @@
 import { EmphasizedWord, ProfilePicture } from 'components'
 import React from 'react'
 import { usePortfolioContext } from 'hooks/usePortfolioContext'
-import { PortableText } from '@portabletext/react'
-import imageUrlBuilder from '@sanity/image-url'
-
-const components = {
-  types: {
-    block: (props) => {
-      // Check if the block is a normal paragraph
-      if (props.node.style === 'normal') {
-        // Use your custom paragraph component or styling
-        return <p style={{ color: 'red' }}>{props.children}</p>
-      }
-
-      // For other block styles, return the default rendering
-      // You might need to handle other styles like headings here
-      return PortableText.defaultComponents.types.block(props)
-    },
-  },
-  listItem: {
-    // Your custom list item renderers
-    bullet: ({ children }) => (
-      <li style={{ listStyleType: 'disclosure-closed' }}>{children}</li>
-    ),
-    checkmarks: ({ children }) => <li>✅ {children}</li>,
-  },
-  // ... any other custom renderers ...
-}
-
-const urlFor = (client, source) => {
-  const builder = imageUrlBuilder(client)
-  return builder.image(source).url()
-}
+import { sanityUrlBuilder } from 'utils/helpers'
 
 const transformAboutRawData = (data) => {
   const obj = {
@@ -44,20 +14,20 @@ const transformAboutRawData = (data) => {
   return obj
 }
 
-const transformTechStack = (data, client) => {
+const transformTechStack = (data, sanityClient) => {
   return data?.techStack?.map((tech) => {
     const techObj = data.techDictionary.find((obj) => obj._id === tech._ref)
     if (techObj?.imageUrl) {
-      techObj.imageUrl = urlFor(client, techObj.imageUrl)
+      techObj.imageUrl = sanityUrlBuilder(sanityClient, techObj.imageUrl)
     }
     return techObj
   })
 }
 
 export const About = ({ darkMode, pageLoaded }) => {
-  const { portfolioData, client } = usePortfolioContext()
-  const user = transformAboutRawData(portfolioData, client)
-  const referencedTechStack = transformTechStack(user, client)
+  const { portfolioData, sanityClient } = usePortfolioContext()
+  const user = transformAboutRawData(portfolioData, sanityClient)
+  const referencedTechStack = transformTechStack(user, sanityClient)
 
   const techStackToDisplay = referencedTechStack
     ?.map((tech) => tech.name)

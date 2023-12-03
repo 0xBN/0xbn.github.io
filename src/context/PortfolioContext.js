@@ -25,7 +25,11 @@ export const PortfolioProvider = ({ children }) => {
 
   // Hooks
   const isWindowSmall = useWindowSize()
-  const { data, client } = useSanityData(PROJECT_ID, DATASET, SCHEMA_TYPES)
+  const { data, sanityClient } = useSanityData(
+    PROJECT_ID,
+    DATASET,
+    SCHEMA_TYPES
+  )
 
   // Effects
   useEffect(() => {
@@ -49,7 +53,7 @@ export const PortfolioProvider = ({ children }) => {
         setCurrentSection,
         pageLoaded,
         setPageLoaded,
-        client,
+        sanityClient,
       }}
     >
       {children}

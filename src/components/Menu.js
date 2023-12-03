@@ -49,20 +49,22 @@ export const Menu = ({
       md:mt-4 md:mb-14 md:block md:min-h-0 md:translate-x-0 md:bg-transparent md:opacity-100 dark:md:bg-transparent`}
       id='dropdown-menu'
     >
-      {MENU_ITEMS.map((item, index) => (
-        <MenuItem
-          key={index}
-          setShowMenu={setShowMenu}
-          link={item.link}
-          label={item.label}
-          iconPlacement='right'
-          svg={item.svg}
-          smoothScrollTo={!isWindowSmall}
-          currentSection={currentSection}
-          setCurrentSection={setCurrentSection}
-          newTab={item.newTab}
-        />
-      ))}
+      {MENU_ITEMS.map((item, index) => {
+        return (
+          <MenuItem
+            key={index}
+            setShowMenu={setShowMenu}
+            link={item.link}
+            label={item.label}
+            iconPlacement='right'
+            svg={item.svg}
+            smoothScrollTo={item.label === 'Resume' ? false : !isWindowSmall}
+            currentSection={currentSection}
+            setCurrentSection={setCurrentSection}
+            newTab={item.newTab}
+          />
+        )
+      })}
     </ul>
   )
 }
