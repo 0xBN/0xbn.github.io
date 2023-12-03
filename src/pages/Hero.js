@@ -1,29 +1,28 @@
-import { useEffect } from 'react';
-import { Button } from 'components';
+import { useEffect } from 'react'
+import { Button } from 'components'
 import {
   GithubSvg,
   LinkedinSvg,
   MailSvg,
   DotPatternSvg,
   DownArrowSvg,
-  CalendarSvg,
-} from 'svgs';
-import { user } from 'data';
-import { animateHeroButtonsOptions, animateHeroTextOptions } from 'utils';
+} from 'svgs'
+import { user } from 'data'
+import { animateHeroButtonsOptions, animateHeroTextOptions } from 'utils'
 
-import { motion, useAnimationControls } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion'
 
 export const Hero = ({ darkMode, isWindowSmall }) => {
-  const slideRight = useAnimationControls();
-  const slideDown = useAnimationControls();
+  const slideRight = useAnimationControls()
+  const slideDown = useAnimationControls()
 
   useEffect(() => {
-    slideRight.start(animateHeroButtonsOptions);
-  });
+    slideRight.start(animateHeroButtonsOptions)
+  })
 
   useEffect(() => {
-    slideDown.start(animateHeroTextOptions);
-  });
+    slideDown.start(animateHeroTextOptions)
+  })
 
   return (
     <div className='delay flex min-h-fullScreenMinHeight flex-col justify-evenly px-8 md:min-h-screen md:py-24'>
@@ -142,5 +141,5 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
         <DownArrowSvg />
       </motion.div>
     </div>
-  );
-};
+  )
+}

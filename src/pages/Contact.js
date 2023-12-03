@@ -1,14 +1,7 @@
-import { ContactOption } from 'components';
-import React from 'react';
-import {
-  CalendarSvg,
-  DotPatternSvg,
-  GithubSvg,
-  LinkedinSvg,
-  MailSvg,
-  PhoneSvg,
-} from 'svgs';
-import { user } from '../data/userData';
+import { ContactOption } from 'components'
+import React from 'react'
+import { DotPatternSvg, GithubSvg, LinkedinSvg, MailSvg } from 'svgs'
+import { user } from '../data/userData'
 
 export const Contact = () => {
   return (
@@ -41,5 +34,5 @@ export const Contact = () => {
         <DotPatternSvg dotColor={`#888`} />
       </div>
     </div>
-  );
-};
+  )
+}

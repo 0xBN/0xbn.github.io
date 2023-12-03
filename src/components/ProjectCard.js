@@ -1,35 +1,20 @@
-import { useState, useEffect } from 'react';
-
 import {
   Carousel,
   EmphasizedWord,
   SvgAndLabel,
   TechnologyList,
-} from 'components';
-import { ProjectSvg } from 'svgs';
-import { CardLinkOut } from './CardLinkOut';
+} from 'components'
+import { ProjectSvg } from 'svgs'
+import { CardLinkOut } from './CardLinkOut'
 
 export const ProjectCard = ({ project }) => {
-  const [width, setWidth] = useState(0);
-
-  useEffect(() => {
-    const updateWindowDimensions = () => {
-      const newWidth = window.innerWidth;
-      setWidth(newWidth);
-      // console.log('updating width');
-    };
-
-    window.addEventListener('resize', updateWindowDimensions);
-    return () => window.removeEventListener('resize', updateWindowDimensions);
-  }, []);
-
   const calcCardWidth = () => {
-    return window.innerWidth < 1500 ? 'md:max-w-5xl' : 'md:max-w-xl';
-  };
-  const cardWidth = `${calcCardWidth()}`;
+    return window.innerWidth < 1500 ? 'md:max-w-5xl' : 'md:max-w-xl'
+  }
+  const cardWidth = `${calcCardWidth()}`
 
-  const newSettings = `border-2 border-white/30`;
-  const oldSettings = ``;
+  const newSettings = `border-2 border-white/30`
+  const oldSettings = ``
 
   return (
     <div
@@ -69,5 +54,5 @@ export const ProjectCard = ({ project }) => {
         </>
       </div>
     </div>
-  );
-};
+  )
+}

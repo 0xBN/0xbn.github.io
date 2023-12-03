@@ -1,13 +1,11 @@
-import { ProjectCard } from 'components';
-import React from 'react';
-import { projects } from 'data';
+import { ProjectCard } from 'components'
+import React from 'react'
+import { projects } from 'data'
 
 export const Projects = () => {
   const projectsList = projects.map((project) => (
     <ProjectCard key={project.id} project={project} />
-  ));
-
-  const oldSettings = ``;
+  ))
 
   return (
     <article
@@ -15,5 +13,5 @@ export const Projects = () => {
     >
       {projectsList}
     </article>
-  );
-};
+  )
+}

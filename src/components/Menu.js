@@ -1,7 +1,6 @@
-import React from 'react';
-import { MenuItem } from 'components';
-import { ContactSvg, GithubSvg, ProjectSvg, ResumeSvg, UserSvg } from 'svgs';
-import { user } from 'data';
+import React from 'react'
+import { MenuItem } from 'components'
+import { ContactSvg, GithubSvg, ProjectSvg, UserSvg } from 'svgs'
 
 export const Menu = ({
   showMenu,
@@ -12,7 +11,7 @@ export const Menu = ({
 }) => {
   let showProperties = !showMenu
     ? 'opacity-0 pointer-events-none -translate-x-80'
-    : null;
+    : null
 
   return (
     <ul
@@ -72,5 +71,5 @@ export const Menu = ({
         setCurrentSection={setCurrentSection}
       /> */}
     </ul>
-  );
-};
+  )
+}
