@@ -1,42 +1,47 @@
+import React, { createContext, useState, useEffect } from 'react'
 import { useTheme } from 'hooks/useTheme'
 import { useWindowSize } from 'hooks/useWindowSize'
-import React, { createContext, useState } from 'react'
-import { useEffect } from 'react'
+import { useSanityData } from 'hooks/useSanityData'
 
-// Creating the context
 export const PortfolioContext = createContext()
 
-export const PortfolioProvider = ({ children }) => {
-  const [portfolioData, setPortfolioData] = useState({
-    // Initialize with your default data structure
-    user: {},
-    projects: [],
-    techIcons: {},
-    techWebsites: {},
-    techWordUpperCase: [],
-    // ... any other data you want to include
-  })
+const PROJECT_ID = 'gm5jomue'
+const DATASET = 'production'
+const SCHEMA_TYPES = [
+  'user',
+  'aboutSection',
+  'heroSection',
+  'project',
+  'projects',
+  'tech',
+]
 
-  // Additional states
-  const isWindowSmall = useWindowSize()
+export const PortfolioProvider = ({ children }) => {
+  // State
+  const [portfolioData, setPortfolioData] = useState()
   const { darkMode, toggleTheme } = useTheme()
   const [currentSection, setCurrentSection] = useState('hero')
   const [pageLoaded, setPageLoaded] = useState(false)
 
+  // Hooks
+  const isWindowSmall = useWindowSize()
+  const { data, client } = useSanityData(PROJECT_ID, DATASET, SCHEMA_TYPES)
+
+  // Effects
   useEffect(() => {
     setPageLoaded(true)
   }, [pageLoaded])
 
-  // Function to update the portfolio data
-  const updatePortfolioData = (newData) => {
-    setPortfolioData(newData)
-  }
+  useEffect(() => {
+    if (data) {
+      setPortfolioData(data)
+    }
+  }, [data])
 
   return (
     <PortfolioContext.Provider
       value={{
         portfolioData,
-        updatePortfolioData,
         darkMode,
         toggleTheme,
         isWindowSmall,
@@ -44,6 +49,7 @@ export const PortfolioProvider = ({ children }) => {
         setCurrentSection,
         pageLoaded,
         setPageLoaded,
+        client,
       }}
     >
       {children}

@@ -1,5 +1,5 @@
 import { Footer, Main, Header } from 'components'
-import { usePortfolio } from 'hooks/usePortfolio'
+import { usePortfolioContext } from 'hooks/usePortfolioContext'
 
 function App() {
   const {
@@ -9,7 +9,7 @@ function App() {
     setCurrentSection,
     isWindowSmall,
     pageLoaded,
-  } = usePortfolio()
+  } = usePortfolioContext()
 
   const testSettings = `overflow-clip`
 

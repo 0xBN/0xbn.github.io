@@ -1,8 +1,8 @@
-let duration = 'duration-700';
-let transition = 'transition-all';
-let opacityStart = 'opacity-0';
-let opacityEnd = 'opacity-100';
-let ease = 'ease-in-out';
+let duration = 'duration-700'
+let transition = 'transition-all'
+let opacityStart = 'opacity-0'
+let opacityEnd = 'opacity-100'
+let ease = 'ease-in-out'
 
 const heroDelayHelper = {
   // sidebar
@@ -34,45 +34,45 @@ const heroDelayHelper = {
   // Other
   10: `delay-[2000ms]`,
   11: `delay-[2200ms]`,
-};
+}
 
 export const slideRightAnimation = (condition, delayPosition) => {
-  let delay = heroDelayHelper[delayPosition];
+  let delay = heroDelayHelper[delayPosition]
 
   return condition
     ? `${opacityStart} ${transition} ${delay} ${duration} -translate-x-10 ${ease}`
-    : `${opacityEnd} ${transition} ${delay} ${duration} translate-x-0 ${ease}`;
-};
+    : `${opacityEnd} ${transition} ${delay} ${duration} translate-x-0 ${ease}`
+}
 
 export const opacityAnimation = (condition, delayPosition) => {
-  let delay = heroDelayHelper[delayPosition];
+  let delay = heroDelayHelper[delayPosition]
 
   return condition
     ? `${delay} ${duration} ${opacityStart} ${ease} ${transition}`
-    : `${delay} ${duration} ${opacityEnd} ${ease} ${transition}`;
-};
+    : `${delay} ${duration} ${opacityEnd} ${ease} ${transition}`
+}
 
 export const slideDownAnimation = (condition, delayPosition) => {
-  let delay = heroDelayHelper[delayPosition];
+  let delay = heroDelayHelper[delayPosition]
 
   return condition
     ? `${opacityStart} ${transition} ${delay} ${duration} -translate-y-10 ${ease}`
-    : `${opacityEnd} ${transition} ${delay} ${duration} translate-y-0 ${ease}`;
-};
+    : `${opacityEnd} ${transition} ${delay} ${duration} translate-y-0 ${ease}`
+}
 
 export const scrollAnimation = (id) => {
   // if (!smoothScrollTo) return;
-  let position = document.getElementById(id.split('#')[1]);
-  position.scrollIntoView({ behavior: 'smooth', block: 'start' });
-};
+  let position = document.getElementById(id.split('#')[1])
+  position.scrollIntoView({ behavior: 'smooth', block: 'start' })
+}
 
 export const noScrollAnimation = (link, newTab = false) => {
   if (newTab) {
-    window.open(link);
+    window.open(link)
   } else {
-    window.location.href = link;
+    window.location.href = link
   }
-};
+}
 
 export const animateSectionOptionsIn = {
   y: 0,
@@ -82,12 +82,12 @@ export const animateSectionOptionsIn = {
     duration: 1,
     bounce: 0.3,
   },
-};
+}
 
 export const animateSectionOptionsOut = {
   y: '10vh',
   opacity: 0,
-};
+}
 
 export const animateHeaderOptions = (i) => ({
   opacity: 1,
@@ -99,7 +99,7 @@ export const animateHeaderOptions = (i) => ({
     type: 'spring',
     bounce: 0.25,
   },
-});
+})
 
 export const animateHeroButtonsOptions = (i) => ({
   opacity: 1,
@@ -111,7 +111,7 @@ export const animateHeroButtonsOptions = (i) => ({
     type: 'spring',
     bounce: 0.25,
   },
-});
+})
 
 export const animateHeroTextOptions = (i) => ({
   opacity: 1,
@@ -123,4 +123,4 @@ export const animateHeroTextOptions = (i) => ({
     type: 'spring',
     bounce: 0.25,
   },
-});
+})
