@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { NavBar } from 'components';
-import { motion, useAnimationControls } from 'framer-motion';
-import { animateHeaderOptions } from 'utils';
+import { useEffect } from 'react'
+import { NavBar } from 'components'
+import { motion, useAnimationControls } from 'framer-motion'
+import { animateHeaderOptions } from 'utils'
 
 export const Header = ({
   darkMode,
@@ -10,11 +10,11 @@ export const Header = ({
   currentSection,
   setCurrentSection,
 }) => {
-  const slideRight = useAnimationControls();
+  const slideRight = useAnimationControls()
 
   useEffect(() => {
-    slideRight.start(animateHeaderOptions);
-  });
+    slideRight.start(animateHeaderOptions)
+  }, [slideRight])
 
   return (
     <motion.header
@@ -32,5 +32,5 @@ export const Header = ({
         setCurrentSection={setCurrentSection}
       />
     </motion.header>
-  );
-};
+  )
+}

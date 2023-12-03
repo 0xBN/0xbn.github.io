@@ -4,15 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer utilities {
   .toggle-btn {
-    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[180deg]
+    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:rotate-[180deg] [&>div]:bg-transparent;
   }
-
 }
-
 
 * {
   -webkit-tap-highlight-color: transparent;
@@ -26,9 +22,8 @@
 
 .test {
   color: #742158;
-  color: #cbd5e1
+  color: #cbd5e1;
 }
-
 
 body {
   margin: 0;
@@ -43,4 +38,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-

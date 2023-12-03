@@ -1,29 +1,41 @@
-import { useEffect } from 'react';
-import { Button } from 'components';
+import { useEffect } from 'react'
+import { Button } from 'components'
 import {
   GithubSvg,
   LinkedinSvg,
   MailSvg,
   DotPatternSvg,
   DownArrowSvg,
-  CalendarSvg,
-} from 'svgs';
-import { user } from 'data';
-import { animateHeroButtonsOptions, animateHeroTextOptions } from 'utils';
+} from 'svgs'
+import { animateHeroButtonsOptions, animateHeroTextOptions } from 'utils'
+import { motion, useAnimationControls } from 'framer-motion'
+import { usePortfolioContext } from 'hooks/usePortfolioContext'
 
-import { motion, useAnimationControls } from 'framer-motion';
+const transformHeroRawData = (data) => {
+  return {
+    firstName: data?.user?.[0]?.firstName,
+    lastName: data?.user?.[0]?.lastName,
+    title: data?.user?.[0]?.title,
+    headline: data?.heroSection?.[0]?.headline,
+    subheadline: data?.heroSection?.[0]?.subheadline,
+    greeting: data?.heroSection?.[0]?.greeting,
+    github: data?.user?.[0]?.socialLinks?.github,
+    linkedin: data?.user?.[0]?.socialLinks?.linkedin,
+    email: data?.user?.[0]?.socialLinks?.email,
+  }
+}
 
 export const Hero = ({ darkMode, isWindowSmall }) => {
-  const slideRight = useAnimationControls();
-  const slideDown = useAnimationControls();
+  const { portfolioData } = usePortfolioContext()
+  const user = transformHeroRawData(portfolioData)
+
+  const slideRight = useAnimationControls()
+  const slideDown = useAnimationControls()
 
   useEffect(() => {
-    slideRight.start(animateHeroButtonsOptions);
-  });
-
-  useEffect(() => {
-    slideDown.start(animateHeroTextOptions);
-  });
+    slideRight.start((i) => animateHeroButtonsOptions(i))
+    slideDown.start((i) => animateHeroTextOptions(i))
+  }, [slideRight, slideDown])
 
   return (
     <div className='delay flex min-h-fullScreenMinHeight flex-col justify-evenly px-8 md:min-h-screen md:py-24'>
@@ -36,7 +48,7 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
           animate={slideDown}
           className={`animation-delay-4000 z-10 text-7xl font-bold md:text-9xl `}
         >
-          {user.first} {user.last}
+          {user.firstName} {user.lastName}
         </motion.h2>
 
         <motion.p
@@ -45,7 +57,7 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
           animate={slideDown}
           className={`text-4xl text-primaryLight dark:text-primaryDark `}
         >
-          Hello there!, I'm-
+          {user.greeting}
         </motion.p>
 
         <motion.div
@@ -72,7 +84,7 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
           animate={slideDown}
           className={`text-xl font-semibold text-secondaryLight dark:text-secondaryDark md:text-3xl `}
         >
-          {user.hero.line1}
+          {user.headline}
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: -50 }}
@@ -80,7 +92,7 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
           animate={slideDown}
           className={`text-xl font-semibold md:text-3xl `}
         >
-          {user.hero.line2}
+          {user.subheadline}
         </motion.p>
       </div>
       <div className='flex items-center justify-center gap-4 py-8 md:justify-start'>
@@ -96,18 +108,7 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
             link={user.github}
           />
         </motion.div>
-        {/* <motion.div
-          initial={{ opacity: 0, x: -125 }}
-          custom={1}
-          animate={slideRight}
-        >
-          <Button
-            svg={<CalendarSvg />}
-            label='Meet'
-            newTab
-            link={user.calendly}
-          />
-        </motion.div> */}
+
         <motion.div
           initial={{ opacity: 0, x: -125 }}
           custom={1}
@@ -142,5 +143,5 @@ export const Hero = ({ darkMode, isWindowSmall }) => {
         <DownArrowSvg />
       </motion.div>
     </div>
-  );
-};
+  )
+}

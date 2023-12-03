@@ -1,14 +1,47 @@
-import { EmphasizedWord, ProfilePicture } from 'components';
-import React from 'react';
-import { user } from 'data';
+import { EmphasizedWord, ProfilePicture } from 'components'
+import React from 'react'
+import { usePortfolioContext } from 'hooks/usePortfolioContext'
+import { sanityUrlBuilder } from 'utils/helpers'
+
+const transformAboutRawData = (data) => {
+  const obj = {
+    summary: data?.aboutSection?.[0]?.summary?.map((child) => {
+      return child
+    }),
+    techStack: data?.aboutSection?.[0]?.techStack,
+    techDictionary: data?.tech,
+  }
+  return obj
+}
+
+const transformTechStack = (data, sanityClient) => {
+  return data?.techStack?.map((tech) => {
+    const techObj = data.techDictionary.find((obj) => obj._id === tech._ref)
+    if (techObj?.imageUrl) {
+      techObj.imageUrl = sanityUrlBuilder(sanityClient, techObj.imageUrl)
+    }
+    return techObj
+  })
+}
 
 export const About = ({ darkMode, pageLoaded }) => {
-  const aboutSummaryContent = user.about.summary.map((line, index) => (
-    <div key={index}>
-      <p>{line}</p>
-      <br />
-    </div>
-  ));
+  const { portfolioData, sanityClient } = usePortfolioContext()
+  const user = transformAboutRawData(portfolioData, sanityClient)
+  const referencedTechStack = transformTechStack(user, sanityClient)
+
+  const techStackToDisplay = referencedTechStack
+    ?.map((tech) => tech.name)
+    .join(', ')
+    .concat('.')
+
+  const summaryToDisplay = user.summary?.map((child, index) => {
+    return (
+      <p key={index} className='my-4'>
+        {child}
+      </p>
+    )
+  })
+
   return (
     <div className='py-4 px-6 text-lg md:flex md:flex-col md:justify-center md:text-3xl'>
       <div className='mb-4 grid w-full place-content-center md:hidden'>
@@ -18,28 +51,11 @@ export const About = ({ darkMode, pageLoaded }) => {
           customRounded='rounded-md'
         />
       </div>
-      {aboutSummaryContent}
-
+      {summaryToDisplay}
       <p className='py-2 md:py-4'>
-        <EmphasizedWord word='Languages ' />
-        {user.about.languages.toString().replaceAll(',', ', ')}
-      </p>
-      <p className='py-2 md:py-4'>
-        <EmphasizedWord word='Frontend ' />
-        {user.about.frontend.toString().replaceAll(',', ', ')}
-      </p>
-      <p className='py-2 md:py-4'>
-        <EmphasizedWord word='Full-stack ' />
-        {user?.about?.fullStack?.toString().replaceAll(',', ', ')}
-      </p>
-      <p className='py-2 md:py-4'>
-        <EmphasizedWord word='Backend ' />
-        {user.about.backend.toString().replaceAll(',', ', ')}
-      </p>
-      <p className='py-2 md:py-4'>
-        <EmphasizedWord word='Tools & Libraries ' />
-        {user.about.otherTechnologies.toString().replaceAll(',', ', ')}
+        <EmphasizedWord word='Tech Stack ' />
+        {techStackToDisplay}
       </p>
     </div>
-  );
-};
+  )
+}

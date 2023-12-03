@@ -12,12 +12,12 @@ const {
   TypescriptSvg,
   PythonSvg,
   JestSvg,
-} = require('svgs');
+} = require('svgs')
 
-const darkBrian = require('../shared/img/darkBrianV2.png');
-const lightBrian = require('../shared/img/lightBrianV2.png');
+const darkBrian = require('../shared/img/darkBrianV2.png')
+const lightBrian = require('../shared/img/lightBrianV2.png')
 
-export const test = 'test123';
+export const test = 'test123'
 
 export const user = {
   first: 'Brian',
@@ -27,7 +27,8 @@ export const user = {
   linkedin: 'https://www.linkedin.com/in/brianvbn',
   calendly: '',
   email: 'brianvbn@gmail.com',
-  resume: '',
+  resume:
+    'https://drive.google.com/file/d/1cEwGd7YlPDVwlhZs_s1CtkPxxBr6z_Dg/view',
   profilePicLight: lightBrian,
   profilePicDark: darkBrian,
   hero: {
@@ -62,7 +63,7 @@ export const user = {
       'JSON Web Token',
     ],
   },
-};
+}
 
 export const projects = [
   {
@@ -171,7 +172,7 @@ export const projects = [
     link: `https://0xbn.github.io/algo-visualizer/`,
     code: `https://github.com/0xBN/algo-visualizer`,
   },
-];
+]
 
 export const techIcons = {
   firebase: <FirebaseSvg />,
@@ -187,7 +188,7 @@ export const techIcons = {
   typescript: <TypescriptSvg />,
   python: <PythonSvg />,
   jest: <JestSvg />,
-};
+}
 
 export const techWebsites = {
   firebase: 'https://firebase.google.com/',
@@ -203,6 +204,6 @@ export const techWebsites = {
   typescript: `https://www.typescriptlang.org/`,
   python: `https://www.python.org/`,
   jest: `https://jestjs.io/`,
-};
+}
 
-export const techWordUpperCase = ['html', 'css'];
+export const techWordUpperCase = ['html', 'css']

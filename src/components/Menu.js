@@ -1,7 +1,36 @@
-import React from 'react';
-import { MenuItem } from 'components';
-import { ContactSvg, GithubSvg, ProjectSvg, ResumeSvg, UserSvg } from 'svgs';
-import { user } from 'data';
+import React from 'react'
+import { MenuItem } from 'components'
+import { ContactSvg, GithubSvg, ProjectSvg, UserSvg, ResumeSvg } from 'svgs'
+import { user } from 'data'
+
+const MENU_ITEMS = [
+  {
+    link: '#about',
+    label: 'About Me',
+    svg: <UserSvg />,
+  },
+  {
+    link: '#projects',
+    label: 'Projects',
+    svg: <ProjectSvg />,
+  },
+  {
+    link: '#skills',
+    label: 'Skills',
+    svg: <GithubSvg />,
+  },
+  {
+    link: '#contact',
+    label: 'Contact Me',
+    svg: <ContactSvg />,
+  },
+  {
+    link: user.resume,
+    label: 'Resume',
+    svg: <ResumeSvg />,
+    newTab: true,
+  },
+]
 
 export const Menu = ({
   showMenu,
@@ -12,7 +41,7 @@ export const Menu = ({
 }) => {
   let showProperties = !showMenu
     ? 'opacity-0 pointer-events-none -translate-x-80'
-    : null;
+    : null
 
   return (
     <ul
@@ -20,57 +49,22 @@ export const Menu = ({
       md:mt-4 md:mb-14 md:block md:min-h-0 md:translate-x-0 md:bg-transparent md:opacity-100 dark:md:bg-transparent`}
       id='dropdown-menu'
     >
-      <MenuItem
-        setShowMenu={setShowMenu}
-        link='#about'
-        label='About Me'
-        iconPlacement='right'
-        svg={<UserSvg />}
-        smoothScrollTo={!isWindowSmall}
-        currentSection={currentSection}
-        setCurrentSection={setCurrentSection}
-      />
-      <MenuItem
-        setShowMenu={setShowMenu}
-        link='#projects'
-        label='Projects'
-        iconPlacement='right'
-        svg={<ProjectSvg />}
-        smoothScrollTo={!isWindowSmall}
-        currentSection={currentSection}
-        setCurrentSection={setCurrentSection}
-      />
-      <MenuItem
-        setShowMenu={setShowMenu}
-        link='#skills'
-        label='Skills'
-        iconPlacement='right'
-        svg={<GithubSvg />}
-        smoothScrollTo={!isWindowSmall}
-        currentSection={currentSection}
-        setCurrentSection={setCurrentSection}
-      />
-      <MenuItem
-        setShowMenu={setShowMenu}
-        link='#contact'
-        label='Contact Me'
-        iconPlacement='right'
-        svg={<ContactSvg />}
-        smoothScrollTo={!isWindowSmall}
-        currentSection={currentSection}
-        setCurrentSection={setCurrentSection}
-      />
-      {/* <MenuItem
-        setShowMenu={setShowMenu}
-        link={user.resume}
-        label='Resume'
-        iconPlacement='right'
-        svg={<ResumeSvg />}
-        smoothScrollTo={false}
-        newTab={true}
-        currentSection={currentSection}
-        setCurrentSection={setCurrentSection}
-      /> */}
+      {MENU_ITEMS.map((item, index) => {
+        return (
+          <MenuItem
+            key={index}
+            setShowMenu={setShowMenu}
+            link={item.link}
+            label={item.label}
+            iconPlacement='right'
+            svg={item.svg}
+            smoothScrollTo={item.label === 'Resume' ? false : !isWindowSmall}
+            currentSection={currentSection}
+            setCurrentSection={setCurrentSection}
+            newTab={item.newTab}
+          />
+        )
+      })}
     </ul>
-  );
-};
+  )
+}
