@@ -1,70 +1,22 @@
-import { useState, useEffect } from 'react';
-import { Footer, Main, Header } from 'components';
+import { Footer, Main, Header } from 'components'
+import { usePortfolio } from 'hooks/usePortfolio'
 
 function App() {
-  const root = document.getElementById('root');
+  const {
+    darkMode,
+    toggleTheme,
+    currentSection,
+    setCurrentSection,
+    isWindowSmall,
+    pageLoaded,
+  } = usePortfolio()
 
-  const [pageLoaded, setPageLoaded] = useState(false);
-  const [darkMode, setDarkMode] = useState(Boolean(localStorage.darkTheme));
-  const [isWindowSmall, setIsWindowSmall] = useState(null);
-  const [currentSection, setCurrentSection] = useState('hero');
-
-  useEffect(() => {
-    setPageLoaded(true);
-  }, [pageLoaded]);
-
-  useEffect(() => {
-    const setWindowSize = () => {
-      setIsWindowSmall(window.innerWidth < 768);
-    };
-    setWindowSize();
-  }, []);
-
-  useEffect(() => {
-    const updateWindowDimensions = () => {
-      const newWidth = window.innerWidth;
-      setIsWindowSmall(newWidth < 768);
-    };
-
-    window.addEventListener('resize', updateWindowDimensions);
-    return () => window.removeEventListener('resize', updateWindowDimensions);
-  });
-
-  useEffect(() => {
-    // SAVE DARK THEME IN LOCAL STORAGE
-    if (localStorage.darkTheme === undefined) {
-      localStorage.setItem('darkTheme', 'true');
-    }
-    if (localStorage.darkTheme === 'true') {
-      setDarkMode(true);
-    }
-    if (localStorage.darkTheme === 'false') {
-      setDarkMode(false);
-    }
-  }, []);
-
-  // HANDLE HTML BACKGROUND COLOR
-  if (darkMode) {
-    root.classList.add('bg-slate-900');
-    root.classList.remove('bg-white');
-  } else {
-    root.classList.add('bg-white');
-    root.classList.remove('bg-slate-900');
-  }
-
-  const toggleTheme = () => {
-    setDarkMode((prev) => {
-      localStorage.setItem('darkTheme', !Boolean(prev));
-      return !darkMode;
-    });
-  };
-
-  const testSettings = `overflow-clip`;
+  const testSettings = `overflow-clip`
 
   return (
     <div
       className={`App mx-auto min-h-screen scroll-smooth  
-       ${Boolean(darkMode) && 'dark'}   md:flex
+       ${Boolean(darkMode) && 'dark'} md:flex
       ${true && testSettings}`}
     >
       <Header
@@ -85,7 +37,7 @@ function App() {
         <Footer />
       </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
