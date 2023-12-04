@@ -34,12 +34,13 @@ export const Skills = () => {
       name: tech.name,
       imageUrl: tech.imageUrl,
       useWhiteBackground: tech.useWhiteBackground,
+      link: tech.url,
     }
     return obj
   })
 
   return (
-    <ul className='grid grid-cols-4 md:grid-cols-5 '>
+    <ul className='grid grid-cols-3 place-content-center p-4 md:grid-cols-4'>
       {techStackToDisplay?.map((tech) => {
         return (
           <SkillCard
@@ -47,6 +48,7 @@ export const Skills = () => {
             label={tech.name}
             src={tech.imageUrl}
             bg={tech.useWhiteBackground ? 'white' : ''}
+            link={tech.link}
           />
         )
       })}
