@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { SlideShowNavButton } from './SlideShowNavButton'
 import { useWindowSize } from 'hooks/useWindowSize'
 
-export const SlideShow = ({ images, cardWidth }) => {
+export const SlideShow = ({ images }) => {
   const [activeSlide, setActiveSlide] = useState(0)
   const { width, isWindowSmall } = useWindowSize()
 
@@ -19,9 +19,9 @@ export const SlideShow = ({ images, cardWidth }) => {
     }
   }
 
-  const slideShowWidth = `w-[${cardWidth}]`
-
-  const adjustedWidth = isWindowSmall ? width - 64 : width - 128
+  const element = document.getElementById('projectCard')
+  const projectCardWidth = element?.clientWidth
+  const adjustedWidth = `${projectCardWidth - 50}px`
 
   return (
     <div
@@ -32,11 +32,12 @@ export const SlideShow = ({ images, cardWidth }) => {
         marginTop: '0',
         marginBottom: '0',
         padding: '0',
+        display: 'grid',
+        placeItems: 'center',
       }}
     >
       {images.map((image, index) => (
         <Slide
-          cardWidth={cardWidth}
           key={index}
           image={image === images[activeSlide] ? image : null}
         />

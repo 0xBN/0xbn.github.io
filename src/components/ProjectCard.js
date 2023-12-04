@@ -8,22 +8,15 @@ import { ProjectSvg } from 'svgs'
 import { CardLinkOut } from './CardLinkOut'
 
 export const ProjectCard = ({ project }) => {
-  const calcCardWidth = () => {
-    return window.innerWidth < 1500 ? 'md:max-w-4xl' : 'md:max-w-xl'
-  }
-
-  const cardWidth = `${calcCardWidth()}`
-
   const newSettings = `border-2 border-white/30`
   const oldSettings = ``
 
   return (
     <div
       className={`flex w-full flex-col overflow-hidden rounded-xl bg-slate-200 p-2 text-xl shadow-md shadow-black/30 
-      dark:bg-slate-700  ${false && oldSettings} ${true && cardWidth} ${
-        true && newSettings
-      }
-       md:p-4`}
+      dark:bg-slate-700  ${false && oldSettings}  ${true && newSettings}
+       m-4 md:w-11/12 md:p-4 lg:w-2/5 xl:w-1/3`}
+      id='projectCard'
     >
       <h3 className='text-center text-2xl font-bold' style={{ padding: '0' }}>
         <SvgAndLabel
@@ -34,7 +27,7 @@ export const ProjectCard = ({ project }) => {
         />
       </h3>
       <div className={`grid w-full place-content-center`}>
-        <Carousel images={project.images} cardWidth={cardWidth} />
+        <Carousel images={project.images} />
       </div>
 
       <div className='flex flex-col gap-2 p-2'>
