@@ -1,5 +1,4 @@
 import { Pagination, Slide } from 'components'
-import { nanoid } from 'nanoid'
 import { useState } from 'react'
 import { SlideShowNavButton } from './SlideShowNavButton'
 import { useWindowSize } from 'hooks/useWindowSize'
@@ -35,10 +34,10 @@ export const SlideShow = ({ images, cardWidth }) => {
         padding: '0',
       }}
     >
-      {images.map((image) => (
+      {images.map((image, index) => (
         <Slide
           cardWidth={cardWidth}
-          key={nanoid()}
+          key={index}
           image={image === images[activeSlide] ? image : null}
         />
       ))}
