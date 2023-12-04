@@ -23,6 +23,7 @@ export const PortfolioProvider = ({ children }) => {
   const { darkMode, toggleTheme } = useTheme()
   const [currentSection, setCurrentSection] = useState('hero')
   const [pageLoaded, setPageLoaded] = useState(false)
+  const [headerLoaded, setHeaderLoaded] = useState(false)
 
   // Hooks
   const { isWindowSmall } = useWindowSize()
@@ -35,13 +36,19 @@ export const PortfolioProvider = ({ children }) => {
 
   // Effects
   useEffect(() => {
-    setPageLoaded(true)
-  }, [pageLoaded])
+    if (portfolioData?.user) {
+      setPageLoaded(true)
+    }
+  }, [pageLoaded, portfolioData])
 
   useEffect(() => {
     if (data) {
       setPortfolioData(data)
     }
+  }, [data])
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
   }, [data])
 
   return (
@@ -56,6 +63,8 @@ export const PortfolioProvider = ({ children }) => {
         pageLoaded,
         setPageLoaded,
         sanityClient,
+        headerLoaded,
+        setHeaderLoaded,
       }}
     >
       {children}

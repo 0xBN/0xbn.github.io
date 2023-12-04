@@ -26,16 +26,18 @@ const transformHeroRawData = (data) => {
 }
 
 export const Hero = ({ darkMode, isWindowSmall }) => {
-  const { portfolioData } = usePortfolioContext()
+  const { portfolioData, pageLoaded, headerLoaded } = usePortfolioContext()
   const user = transformHeroRawData(portfolioData)
 
   const slideRight = useAnimationControls()
   const slideDown = useAnimationControls()
 
   useEffect(() => {
-    slideRight.start((i) => animateHeroButtonsOptions(i))
-    slideDown.start((i) => animateHeroTextOptions(i))
-  }, [slideRight, slideDown])
+    if (pageLoaded && headerLoaded) {
+      slideRight.start(animateHeroButtonsOptions)
+      slideDown.start(animateHeroTextOptions)
+    }
+  }, [slideRight, slideDown, pageLoaded, headerLoaded])
 
   return (
     <div className='delay flex min-h-fullScreenMinHeight flex-col justify-evenly px-8 md:min-h-screen md:py-24'>

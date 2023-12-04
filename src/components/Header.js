@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { NavBar } from 'components'
 import { motion, useAnimationControls } from 'framer-motion'
 import { animateHeaderOptions } from 'utils'
+import { usePortfolioContext } from 'hooks/usePortfolioContext'
 
 export const Header = ({
   darkMode,
@@ -10,11 +11,15 @@ export const Header = ({
   currentSection,
   setCurrentSection,
 }) => {
+  const { pageLoaded, setHeaderLoaded } = usePortfolioContext()
   const slideRight = useAnimationControls()
 
   useEffect(() => {
-    slideRight.start(animateHeaderOptions)
-  }, [slideRight])
+    if (pageLoaded) {
+      slideRight.start(animateHeaderOptions)
+      setHeaderLoaded(true)
+    }
+  }, [slideRight, pageLoaded, setHeaderLoaded])
 
   return (
     <motion.header
