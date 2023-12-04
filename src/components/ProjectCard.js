@@ -17,7 +17,7 @@ export const ProjectCard = ({ project }) => {
       dark:bg-slate-700  ${false && oldSettings}  ${true && newSettings}
        m-4 md:w-11/12 md:p-4 lg:w-2/5 xl:w-1/3`}
       id='projectCard'
-      style={{ border: '2px solid white', justifyContent: 'space-between' }}
+      style={{ justifyContent: 'space-between' }}
     >
       <h3 className='text-center text-2xl font-bold' style={{ padding: '0' }}>
         <SvgAndLabel
