@@ -13,9 +13,8 @@ export const ProjectCard = ({ project }) => {
 
   return (
     <div
-      className={`flex w-full flex-col overflow-hidden rounded-xl bg-slate-200 p-2 text-xl shadow-md shadow-black/30 
-      dark:bg-slate-700  ${false && oldSettings}  ${true && newSettings}
-       m-4 md:w-11/12 md:p-4 lg:w-2/5 xl:w-1/3`}
+      className={`m-4 flex w-full flex-col overflow-hidden rounded-xl bg-slate-200 p-2 text-xl shadow-md 
+      shadow-black/30 dark:bg-slate-700 md:w-11/12 md:p-4 lg:w-2/5 xl:w-1/3`}
       id='projectCard'
       style={{ justifyContent: 'space-between' }}
     >
