@@ -26,8 +26,8 @@ export const Header = ({
       initial={{ opacity: 0, y: -20 }}
       custom={1}
       animate={slideDown}
-      className={`sticky top-0 z-30 bg-navLight shadow-sm shadow-gray-500 dark:bg-navDark dark:text-white dark:shadow-md md:relative md:max-h-screen
-      md:min-w-[250px] md:max-w-[300px] md:overflow-y-auto`}
+      className={`sticky top-0 z-30 bg-navLight shadow-sm shadow-gray-500 dark:bg-navDark dark:text-white dark:shadow-md md:relative
+      md:max-h-screen md:min-w-[250px] md:max-w-[300px] md:overflow-y-auto`}
     >
       <NavBar
         toggleTheme={toggleTheme}

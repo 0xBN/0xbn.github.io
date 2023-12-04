@@ -17,11 +17,11 @@ export const useTheme = () => {
   useEffect(() => {
     const root = document.getElementById('root')
     if (darkMode) {
-      root.classList.add('bg-slate-900')
+      root.classList.add('bg-neutral-900')
       root.classList.remove('bg-white')
     } else {
       root.classList.add('bg-white')
-      root.classList.remove('bg-slate-900')
+      root.classList.remove('bg-neutral-900')
     }
   }, [darkMode])
 

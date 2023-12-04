@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 
 import {
   Menu,
@@ -6,7 +6,7 @@ import {
   ProfilePicture,
   MenuButton,
   MobileNameHeader,
-} from 'components';
+} from 'components'
 
 export const NavBar = ({
   toggleTheme,
@@ -15,14 +15,14 @@ export const NavBar = ({
   currentSection,
   setCurrentSection,
 }) => {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false)
 
   const toggleMenu = () => {
-    setShowMenu((prev) => !showMenu);
-  };
+    setShowMenu((prev) => !showMenu)
+  }
 
   return (
-    <nav className='flex flex-row-reverse justify-between md:min-w-full md:flex-col md:items-end md:text-right'>
+    <nav className='flex flex-row-reverse justify-between  md:min-w-full md:flex-col md:items-end md:text-right'>
       {/* MOBILE ONLY  */}
       <MenuButton toggleMenu={toggleMenu} showMenu={showMenu} />
       <MobileNameHeader
@@ -47,7 +47,7 @@ export const NavBar = ({
         toggleTheme={toggleTheme}
       />
     </nav>
-  );
-};
+  )
+}
 
-export default NavBar;
+export default NavBar
