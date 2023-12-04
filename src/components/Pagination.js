@@ -1,16 +1,17 @@
-import React from 'react';
+import React from 'react'
 
 export const Pagination = ({ activeSlide, total, setActiveSlide }) => {
-  const handlePaginationClick = (e) => setActiveSlide(Number(e.target.id));
+  if (total <= 1) return null
+  const handlePaginationClick = (e) => setActiveSlide(Number(e.target.id))
 
   const paginationDots = () => {
-    let list = [];
+    let list = []
     for (let i = 0; i < total; i++) {
-      list.push(i);
+      list.push(i)
     }
 
     return list.map((item) => {
-      let isActive = list.indexOf(item) === activeSlide;
+      let isActive = list.indexOf(item) === activeSlide
       return (
         <div
           id={item}
@@ -22,15 +23,15 @@ export const Pagination = ({ activeSlide, total, setActiveSlide }) => {
             isActive ? 'text-primaryLight dark:text-primaryDark' : 'text-white'
           }`}
         >
-          &#8211;
+          .
         </div>
-      );
-    });
-  };
+      )
+    })
+  }
 
   return (
-    <div className='absolute -bottom-6 right-1/2 flex translate-x-1/2 flex-row gap-4'>
+    <div className='absolute bottom-12 right-1/2 flex translate-x-1/2 flex-row gap-4'>
       {paginationDots()}
     </div>
-  );
-};
+  )
+}

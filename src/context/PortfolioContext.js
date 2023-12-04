@@ -2,6 +2,7 @@ import React, { createContext, useState, useEffect } from 'react'
 import { useTheme } from 'hooks/useTheme'
 import { useWindowSize } from 'hooks/useWindowSize'
 import { useSanityData } from 'hooks/useSanityData'
+import { useDocumentTitle } from 'hooks/useDocumentTitle'
 
 export const PortfolioContext = createContext()
 
@@ -24,12 +25,13 @@ export const PortfolioProvider = ({ children }) => {
   const [pageLoaded, setPageLoaded] = useState(false)
 
   // Hooks
-  const isWindowSmall = useWindowSize()
+  const { isWindowSmall } = useWindowSize()
   const { data, sanityClient } = useSanityData(
     PROJECT_ID,
     DATASET,
     SCHEMA_TYPES
   )
+  useDocumentTitle(portfolioData)
 
   // Effects
   useEffect(() => {
