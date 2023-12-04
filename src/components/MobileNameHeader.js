@@ -16,6 +16,7 @@ export const MobileNameHeader = ({
 }) => {
   const { portfolioData } = usePortfolioContext()
   const user = transformMobileNameHeaderRawData(portfolioData)
+  console.log(user)
 
   const clickHeroLogo = () => {
     if (showMenu) setShowMenu(false)

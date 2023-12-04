@@ -91,11 +91,11 @@ export const animateSectionOptionsOut = {
 
 export const animateHeaderOptions = (i) => ({
   opacity: 1,
-  x: 0,
+  y: 0,
   ease: 'easeInOut',
   transition: {
     delay: i * 0.2,
-    duration: 3,
+    duration: 1,
     type: 'spring',
     bounce: 0.25,
   },

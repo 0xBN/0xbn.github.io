@@ -12,20 +12,20 @@ export const Header = ({
   setCurrentSection,
 }) => {
   const { pageLoaded, setHeaderLoaded } = usePortfolioContext()
-  const slideRight = useAnimationControls()
+  const slideDown = useAnimationControls()
 
   useEffect(() => {
     if (pageLoaded) {
-      slideRight.start(animateHeaderOptions)
+      slideDown.start(animateHeaderOptions)
       setHeaderLoaded(true)
     }
-  }, [slideRight, pageLoaded, setHeaderLoaded])
+  }, [slideDown, pageLoaded, setHeaderLoaded])
 
   return (
     <motion.header
-      initial={{ opacity: 0, x: -50 }}
+      initial={{ opacity: 0, y: -20 }}
       custom={1}
-      animate={slideRight}
+      animate={slideDown}
       className={`sticky top-0 z-30 bg-navLight shadow-sm shadow-gray-500 dark:bg-navDark dark:text-white dark:shadow-md md:relative md:max-h-screen
       md:min-w-[250px] md:max-w-[300px] md:overflow-y-auto`}
     >
