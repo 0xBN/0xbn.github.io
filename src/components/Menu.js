@@ -2,6 +2,7 @@ import React from 'react'
 import { MenuItem } from 'components'
 import { ContactSvg, GithubSvg, ProjectSvg, UserSvg, ResumeSvg } from 'svgs'
 import { user } from 'data'
+import { usePortfolioContext } from 'hooks/usePortfolioContext'
 
 const MENU_ITEMS = [
   {
@@ -39,6 +40,7 @@ export const Menu = ({
   currentSection,
   setCurrentSection,
 }) => {
+  const { portfolioData } = usePortfolioContext()
   let showProperties = !showMenu
     ? 'opacity-0 pointer-events-none -translate-x-80'
     : null
@@ -54,7 +56,11 @@ export const Menu = ({
           <MenuItem
             key={index}
             setShowMenu={setShowMenu}
-            link={item.link}
+            link={
+              item.label === 'Resume'
+                ? portfolioData?.user?.[0].resume
+                : item.link
+            }
             label={item.label}
             iconPlacement='right'
             svg={item.svg}
