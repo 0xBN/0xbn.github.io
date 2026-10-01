@@ -6,8 +6,8 @@ export const Main = ({ setCurrentSection }) => {
   useScrollSection(setCurrentSection)
 
   return (
-    <main className='flex flex-col gap-5 pb-8 font-display text-neutral-900 dark:text-neutral-100'>
-      <GlassPanel id='hero' className='min-h-[min(70vh,640px)]'>
+    <main className='flex flex-col gap-4 pb-6 font-display text-neutral-900 dark:text-neutral-100'>
+      <GlassPanel id='hero'>
         <Hero />
       </GlassPanel>
 

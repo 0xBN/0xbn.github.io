@@ -5,7 +5,7 @@ export const GlassPanel = ({ id, title, children, className = '' }) => {
       className={`glass-panel scroll-mt-[calc(var(--header-height,8.5rem)+0.75rem)] ${className}`}
     >
       {title ? (
-        <h2 className='mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primaryLight dark:text-primaryDark'>
+        <h2 className='mb-3 text-[11px] font-semibold uppercase tracking-[0.18em] text-primaryLight dark:text-primaryDark'>
           {title}
         </h2>
       ) : null}

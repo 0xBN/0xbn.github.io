@@ -27,17 +27,19 @@ export const user = {
 }
 
 export const hero = {
-  greeting: 'Hello —',
-  headline: 'I build thoughtful, performant web experiences.',
+  eyebrow: 'Chicago',
+  headline: 'Software engineer focused on building better web products.',
   subheadline:
-    'Frontend-focused engineer in Chicago, shipping e-commerce and internal tools.',
+    'E-commerce, platform work, performance, and the systems behind reliable user experiences.',
 }
 
 export const about = {
   summary: [
-    `I'm a software engineer with a background in economics and operations. I moved into development after years of solving technical problems in fast-paced environments, and I've spent the last several years focused on frontend work — React, TypeScript, and the details that make products feel polished.`,
-    `By day I work on e-commerce and web platform engineering. I'm also pursuing an MS in Computer Science (OMSCS) while staying curious about design systems, accessibility, and developer experience.`,
-    `Outside of work you'll find me climbing, exploring restaurants around Chicago, and hanging out with my cats.`,
+    `I'm a software engineer with a background in economics and operations. I moved into development after spending years solving technical and process problems in fast-moving environments.`,
+
+    `Most of my work today is around e-commerce and web platforms, with a focus on performance, maintainability, and improving how products are built and shipped. I'm also pursuing an MS in Computer Science through Georgia Tech's OMSCS program.`,
+
+    `Outside of work, I like climbing, trying restaurants around Chicago, and hanging out with my cats.`,
   ],
 }
 

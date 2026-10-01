@@ -14,7 +14,7 @@ function App() {
     <div className={`site-shell min-h-screen ${darkMode ? 'dark' : ''}`}>
       <div className='site-bg' aria-hidden='true' />
 
-      <div className='relative mx-auto max-w-2xl px-4 py-4 md:px-6 md:py-6'>
+      <div className='relative mx-auto max-w-2xl px-4 py-3 md:px-6 md:py-5'>
         <SiteHeader
           darkMode={darkMode}
           themePreference={themePreference}
@@ -23,7 +23,7 @@ function App() {
           setCurrentSection={setCurrentSection}
         />
 
-        <div className='mt-4'>
+        <div className='mt-3'>
           <Main setCurrentSection={setCurrentSection} />
           <Footer />
         </div>
