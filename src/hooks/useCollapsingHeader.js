@@ -4,10 +4,12 @@ const STRIPE_EASE = 'cubic-bezier(0.32, 0.72, 0, 1)'
 
 /** Scroll down → compact; scroll up or near top → expanded */
 export function useCollapsingHeader({
-  topThreshold = 48,
-  directionDelta = 6,
+  topThreshold = 56,
+  directionDelta = 14,
 } = {}) {
-  const [compact, setCompact] = useState(false)
+  const [compact, setCompact] = useState(
+    () => typeof window !== 'undefined' && window.scrollY > topThreshold
+  )
   const lastY = useRef(0)
   const ticking = useRef(false)
 

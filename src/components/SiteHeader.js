@@ -25,6 +25,7 @@ export const SiteHeader = ({
   setCurrentSection,
 }) => {
   const headerRef = useRef(null)
+  const expandedHeaderHeightRef = useRef(null)
   const { compact } = useCollapsingHeader()
 
   const go = (hash) => {
@@ -32,20 +33,36 @@ export const SiteHeader = ({
     scrollAnimation(hash)
   }
 
+  // Scroll padding uses expanded header height only — shrinking when compact caused mid-scroll jumps.
   useLayoutEffect(() => {
     const el = headerRef.current
     if (!el) return
 
-    const setHeight = () => {
-      const h = Math.ceil(el.getBoundingClientRect().height)
+    const applyScrollPadding = (h) => {
+      expandedHeaderHeightRef.current = h
       document.documentElement.style.setProperty('--header-height', `${h}px`)
     }
 
-    setHeight()
-    const ro = new ResizeObserver(setHeight)
+    const measure = () => {
+      if (!compact) {
+        applyScrollPadding(Math.ceil(el.getBoundingClientRect().height))
+      } else if (expandedHeaderHeightRef.current != null) {
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${expandedHeaderHeightRef.current}px`
+        )
+      }
+    }
+
+    measure()
+    const ro = new ResizeObserver(measure)
     ro.observe(el)
-    return () => ro.disconnect()
-  }, [compact, currentSection])
+    window.addEventListener('resize', measure)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', measure)
+    }
+  }, [compact])
 
   const sectionHint =
     SECTION_LABEL[currentSection] ?? SECTION_LABEL.hero

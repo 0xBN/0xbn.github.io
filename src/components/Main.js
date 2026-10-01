@@ -1,29 +1,9 @@
-import { useEffect } from 'react'
 import { GlassPanel } from 'components/GlassPanel'
 import { About, Projects, Skills, Hero } from 'pages'
-import { useInView } from 'react-intersection-observer'
+import { useScrollSection } from 'hooks/useScrollSection'
 
 export const Main = ({ setCurrentSection }) => {
-  const inViewOptions = {
-    threshold: 0.25,
-    rootMargin: '-40% 0px -40% 0px',
-  }
-
-  const { ref: aboutRef, inView: aboutInView } = useInView(inViewOptions)
-  const { ref: projectsRef, inView: projectsInView } = useInView(inViewOptions)
-  const { ref: skillsRef, inView: skillsInView } = useInView(inViewOptions)
-
-  useEffect(() => {
-    if (aboutInView) setCurrentSection('about')
-  }, [aboutInView, setCurrentSection])
-
-  useEffect(() => {
-    if (projectsInView) setCurrentSection('projects')
-  }, [projectsInView, setCurrentSection])
-
-  useEffect(() => {
-    if (skillsInView) setCurrentSection('skills')
-  }, [skillsInView, setCurrentSection])
+  useScrollSection(setCurrentSection)
 
   return (
     <main className='flex flex-col gap-5 pb-8 font-display text-neutral-900 dark:text-neutral-100'>
@@ -31,23 +11,17 @@ export const Main = ({ setCurrentSection }) => {
         <Hero />
       </GlassPanel>
 
-      <div ref={aboutRef}>
-        <GlassPanel id='about' title='About'>
-          <About />
-        </GlassPanel>
-      </div>
+      <GlassPanel id='about' title='About'>
+        <About />
+      </GlassPanel>
 
-      <div ref={projectsRef}>
-        <GlassPanel id='projects' title='Projects'>
-          <Projects />
-        </GlassPanel>
-      </div>
+      <GlassPanel id='projects' title='Projects'>
+        <Projects />
+      </GlassPanel>
 
-      <div ref={skillsRef}>
-        <GlassPanel id='skills' title='Tools'>
-          <Skills />
-        </GlassPanel>
-      </div>
+      <GlassPanel id='skills' title='Tools'>
+        <Skills />
+      </GlassPanel>
     </main>
   )
 }

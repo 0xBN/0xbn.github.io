@@ -48,16 +48,7 @@ export const scrollAnimation = (hash) => {
   const target = document.getElementById(id)
   if (!target) return
 
-  const headerOffset = parseFloat(
-    getComputedStyle(document.documentElement).getPropertyValue(
-      '--header-height'
-    )
-  )
-  const offset = Number.isFinite(headerOffset) ? headerOffset + 12 : 144
-
-  const top = target.getBoundingClientRect().top + window.scrollY - offset
-
-  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' })
 }
 
 export const noScrollAnimation = (link, newTab = false) => {
