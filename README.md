@@ -35,12 +35,15 @@ Open [http://localhost:5173](http://localhost:5173).
 
 ## Build and deploy
 
+Pushes to `main` build and publish to the `gh-pages` branch via GitHub Actions (see `.github/workflows/deploy.yml`).
+
+To deploy manually:
+
 ```bash
-npm run build
 npm run deploy
 ```
 
-`predeploy` clears `dist` and builds; `deploy` publishes `dist` to the `gh-pages` branch.
+`predeploy` clears `dist` and builds; `deploy` publishes `dist` to `gh-pages`.
 
 ## Notable features
 
