@@ -1,51 +1,32 @@
 import { ContactOption } from 'components'
-import React from 'react'
-import { DotPatternSvg, GithubSvg, LinkedinSvg, MailSvg } from 'svgs'
-import { user } from '../data/userData'
+import { SimpleBrandIcon } from 'components/SimpleBrandIcon'
+import { brandIcons } from 'data/brandIcons'
 import { usePortfolioContext } from 'hooks/usePortfolioContext'
 import { cleanUrl } from 'utils/helpers'
 
-const transformHeroRawData = (data) => {
-  return {
-    github: data?.user?.[0]?.socialLinks?.github,
-    linkedin: data?.user?.[0]?.socialLinks?.linkedin,
-    email: data?.user?.[0]?.socialLinks?.email,
-  }
-}
-
 export const Contact = () => {
-  const { portfolioData } = usePortfolioContext()
-  const user_v2 = transformHeroRawData(portfolioData)
+  const { site } = usePortfolioContext()
+  const { user } = site
 
   return (
-    <div className='relative flex flex-col gap-4 p-4 text-2xl md:p-8'>
+    <div className='select-text flex flex-col gap-3 text-base md:text-lg'>
       <ContactOption
-        label={user_v2.email}
-        link={`mailto:${user_v2.email}`}
-        svg={<MailSvg />}
+        label={user.email}
+        link={`mailto:${user.email}`}
+        svg={<SimpleBrandIcon icon={brandIcons.gmail} className='size-6' />}
       />
       <ContactOption
-        label={cleanUrl(user_v2.github)}
-        link={user_v2.github}
+        label={cleanUrl(user.github)}
+        link={user.github}
         newTab={true}
-        svg={<GithubSvg />}
+        svg={<SimpleBrandIcon icon={brandIcons.github} className='size-6' />}
       />
       <ContactOption
-        label={cleanUrl(user_v2.linkedin)}
-        link={user_v2.linkedin}
-        svg={<LinkedinSvg />}
+        label={cleanUrl(user.linkedin)}
+        link={user.linkedin}
+        svg={<SimpleBrandIcon icon={brandIcons.linkedin} className='size-6' />}
         newTab={true}
       />
-      {/* <ContactOption
-        label={user_v2.calendly.split('https://www.')[1]}
-        link={user_v2.calendly}
-        svg={<CalendarSvg />}
-        newTab={true}
-      /> */}
-
-      <div className='absolute bottom-24 left-48 z-0 h-40 w-40 animate-spin-slow md:bottom-40 md:left-96 md:h-56 md:w-56'>
-        <DotPatternSvg dotColor={`#888`} />
-      </div>
     </div>
   )
 }

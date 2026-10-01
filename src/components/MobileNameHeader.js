@@ -1,22 +1,12 @@
-import React from 'react'
 import { usePortfolioContext } from 'hooks/usePortfolioContext'
-
-const transformMobileNameHeaderRawData = (data) => {
-  return {
-    firstName: data?.user?.[0]?.firstName,
-    lastName: data?.user?.[0]?.lastName,
-    title: data?.user?.[0]?.title,
-  }
-}
 
 export const MobileNameHeader = ({
   showMenu,
   setShowMenu,
   setCurrentSection,
 }) => {
-  const { portfolioData } = usePortfolioContext()
-  const user = transformMobileNameHeaderRawData(portfolioData)
-  console.log(user)
+  const { site } = usePortfolioContext()
+  const { user } = site
 
   const clickHeroLogo = () => {
     if (showMenu) setShowMenu(false)
@@ -25,11 +15,13 @@ export const MobileNameHeader = ({
   }
 
   return (
-    <div onClick={clickHeroLogo} className='py-3 md:hidden'>
-      <h1 className=' text-center text-xl font-bold'>
+    <div onClick={clickHeroLogo} className='cursor-pointer py-3 md:hidden'>
+      <h1 className='text-center text-xl font-bold'>
         {user.firstName} {user.lastName}
       </h1>
-      <p>{user.title}</p>
+      <p className='text-center text-sm text-neutral-600 dark:text-neutral-400'>
+        {user.title}
+      </p>
     </div>
   )
 }

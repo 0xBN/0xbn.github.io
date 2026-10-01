@@ -6,7 +6,8 @@ import { usePortfolioContext } from 'hooks/usePortfolioContext'
 
 export const Header = ({
   darkMode,
-  toggleTheme,
+  themePreference,
+  setThemePreference,
   isWindowSmall,
   currentSection,
   setCurrentSection,
@@ -30,7 +31,8 @@ export const Header = ({
       md:max-h-screen md:min-w-[250px] md:max-w-[300px] md:overflow-y-auto`}
     >
       <NavBar
-        toggleTheme={toggleTheme}
+        themePreference={themePreference}
+        setThemePreference={setThemePreference}
         darkMode={darkMode}
         isWindowSmall={isWindowSmall}
         currentSection={currentSection}

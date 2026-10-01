@@ -1,7 +1,14 @@
 export const Slide = ({ image }) => {
+  if (!image) return null
+
   return (
-    <div className='absolute z-0 opacity-100'>
-      <img src={image} alt='' style={{ borderRadius: '5px' }} />
-    </div>
+    <img
+      src={image}
+      alt=''
+      className='h-full w-full object-contain'
+      style={{ borderRadius: '5px' }}
+      loading='lazy'
+      decoding='async'
+    />
   )
 }

@@ -35,3 +35,4 @@ export * from './LeftChevronSvg';
 export * from './PhoneSvg';
 export * from './UpArrowSvg';
 export * from './CalendarSvg';
+export * from './SystemThemeSvg';

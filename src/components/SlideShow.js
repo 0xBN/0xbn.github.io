@@ -1,11 +1,26 @@
 import { Pagination, Slide } from 'components'
-import { useState } from 'react'
+import { useState, useRef, useLayoutEffect } from 'react'
 import { SlideShowNavButton } from './SlideShowNavButton'
-import { useWindowSize } from 'hooks/useWindowSize'
 
 export const SlideShow = ({ images }) => {
   const [activeSlide, setActiveSlide] = useState(0)
-  const { width, isWindowSmall } = useWindowSize()
+  const containerRef = useRef(null)
+  const [frameWidth, setFrameWidth] = useState(null)
+
+  useLayoutEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+
+    const update = () => {
+      const w = el.clientWidth
+      if (w > 0) setFrameWidth(Math.max(w - 16, 200))
+    }
+
+    update()
+    const ro = new ResizeObserver(update)
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
 
   const handleSlideShowNav = (direction) => {
     if (direction === 'next') {
@@ -19,42 +34,33 @@ export const SlideShow = ({ images }) => {
     }
   }
 
-  const element = document.getElementById('projectCard')
-  const projectCardWidth = element?.clientWidth
-  const adjustedWidth = `${projectCardWidth - 50}px`
+  const activeImage = images[activeSlide]
 
   return (
     <div
-      className={`relative flex flex-row items-center justify-between rounded-lg`}
+      ref={containerRef}
+      className='relative mx-auto w-full max-w-md rounded-lg'
       style={{
-        width: adjustedWidth,
-        margin: '.5em',
-        marginTop: '0',
-        marginBottom: '0',
-        padding: '0',
-        display: 'grid',
-        placeItems: 'center',
+        width: frameWidth ? `${frameWidth}px` : '100%',
+        minHeight: frameWidth ? `${frameWidth}px` : '16rem',
       }}
     >
-      {images.map((image, index) => (
-        <Slide
-          key={index}
-          image={image === images[activeSlide] ? image : null}
-        />
-      ))}
+      <div className='relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-lg bg-neutral-100 dark:bg-neutral-800/50'>
+        {activeImage ? <Slide image={activeImage} /> : null}
 
-      {images.length > 1 && (
-        <>
-          <SlideShowNavButton
-            handleSlideShowNav={handleSlideShowNav}
-            direction='prev'
-          />
-          <SlideShowNavButton
-            handleSlideShowNav={handleSlideShowNav}
-            direction='next'
-          />
-        </>
-      )}
+        {images.length > 1 && (
+          <>
+            <SlideShowNavButton
+              handleSlideShowNav={handleSlideShowNav}
+              direction='prev'
+            />
+            <SlideShowNavButton
+              handleSlideShowNav={handleSlideShowNav}
+              direction='next'
+            />
+          </>
+        )}
+      </div>
       <Pagination
         activeSlide={activeSlide}
         total={images.length}

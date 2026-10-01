@@ -5,33 +5,16 @@ let opacityEnd = 'opacity-100'
 let ease = 'ease-in-out'
 
 const heroDelayHelper = {
-  // sidebar
   0: `delay-[0ms]`,
-
-  // hello there
   1: `delay-[200ms]`,
-
-  // Name
   2: `delay-[400ms]`,
-
-  // Svg
   3: `delay-[500ms]`,
-
-  // Descript 1
   4: `delay-[700ms]`,
-  // Descript 2
   5: `delay-[800ms]`,
-  // Descript 3
   6: `delay-[900ms]`,
-
-  // button1
   7: `delay-[1100ms]`,
-  // button2
   8: `delay-[1200ms]`,
-  // button3
   9: `delay-[1300ms]`,
-
-  // Other
   10: `delay-[2000ms]`,
   11: `delay-[2200ms]`,
 }
@@ -60,10 +43,21 @@ export const slideDownAnimation = (condition, delayPosition) => {
     : `${opacityEnd} ${transition} ${delay} ${duration} translate-y-0 ${ease}`
 }
 
-export const scrollAnimation = (id) => {
-  // if (!smoothScrollTo) return;
-  let position = document.getElementById(id.split('#')[1])
-  position.scrollIntoView({ behavior: 'smooth', block: 'start' })
+export const scrollAnimation = (hash) => {
+  const id = hash?.startsWith('#') ? hash.slice(1) : hash
+  const target = document.getElementById(id)
+  if (!target) return
+
+  const headerOffset = parseFloat(
+    getComputedStyle(document.documentElement).getPropertyValue(
+      '--header-height'
+    )
+  )
+  const offset = Number.isFinite(headerOffset) ? headerOffset + 12 : 144
+
+  const top = target.getBoundingClientRect().top + window.scrollY - offset
+
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' })
 }
 
 export const noScrollAnimation = (link, newTab = false) => {

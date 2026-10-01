@@ -1,115 +1,53 @@
-import { useEffect } from 'react';
-import { Section } from 'components';
-import { About, Projects, Skills, Contact, Hero } from 'pages';
-import { useAnimation, motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import {
-  animateSectionOptionsIn as animateIn,
-  animateSectionOptionsOut as animateOut,
-} from 'utils';
+import { useEffect } from 'react'
+import { GlassPanel } from 'components/GlassPanel'
+import { About, Projects, Skills, Hero } from 'pages'
+import { useInView } from 'react-intersection-observer'
 
-export const Main = ({
-  darkMode,
-  pageLoaded,
-  isWindowSmall,
-  setCurrentSection,
-}) => {
-  let inViewOptions = {
-    threshold: 0,
-    rootMargin: `${isWindowSmall ? '-100px' : '-200px'} 0px -50px 0px`,
-  };
+export const Main = ({ setCurrentSection }) => {
+  const inViewOptions = {
+    threshold: 0.25,
+    rootMargin: '-40% 0px -40% 0px',
+  }
 
-  const { ref: aboutRef, inView: aboutInView } = useInView(inViewOptions);
-  const { ref: projectsRef, inView: projectsInView } = useInView(inViewOptions);
-  const { ref: skillsRef, inView: skillsInView } = useInView(inViewOptions);
-  const { ref: contactRef, inView: contactInView } = useInView(inViewOptions);
-
-  const aboutAnimation = useAnimation();
-  const projectAnimation = useAnimation();
-  const skillsAnimation = useAnimation();
-  const contactAnimation = useAnimation();
+  const { ref: aboutRef, inView: aboutInView } = useInView(inViewOptions)
+  const { ref: projectsRef, inView: projectsInView } = useInView(inViewOptions)
+  const { ref: skillsRef, inView: skillsInView } = useInView(inViewOptions)
 
   useEffect(() => {
-    if (aboutInView) {
-      setCurrentSection('about');
-      aboutAnimation.start(animateIn);
-    }
-    if (!aboutInView) aboutAnimation.start(animateOut);
-  }, [aboutInView, aboutAnimation, setCurrentSection]);
+    if (aboutInView) setCurrentSection('about')
+  }, [aboutInView, setCurrentSection])
 
   useEffect(() => {
-    if (projectsInView) {
-      setCurrentSection('projects');
-      projectAnimation.start(animateIn);
-    }
-    if (!projectsInView) projectAnimation.start(animateOut);
-  }, [projectsInView, projectAnimation, setCurrentSection]);
+    if (projectsInView) setCurrentSection('projects')
+  }, [projectsInView, setCurrentSection])
 
   useEffect(() => {
-    if (skillsInView) {
-      setCurrentSection('skills');
-      skillsAnimation.start(animateIn);
-    }
-    if (!skillsInView) skillsAnimation.start(animateOut);
-  }, [skillsInView, skillsAnimation, setCurrentSection]);
-
-  useEffect(() => {
-    if (contactInView) {
-      setCurrentSection('contact');
-      contactAnimation.start(animateIn);
-    }
-    if (!contactInView) contactAnimation.start(animateOut);
-  }, [contactInView, contactAnimation, setCurrentSection]);
+    if (skillsInView) setCurrentSection('skills')
+  }, [skillsInView, setCurrentSection])
 
   return (
-    <main className='min-h-screen bg-white text-black dark:bg-neutral-900 dark:text-white'>
-      <Section
-        pageLoaded={pageLoaded}
-        id='hero'
-        content={<Hero darkMode={darkMode} isWindowSmall={isWindowSmall} />}
-      />
+    <main className='flex flex-col gap-5 pb-8 font-display text-neutral-900 dark:text-neutral-100'>
+      <GlassPanel id='hero' className='min-h-[min(70vh,640px)]'>
+        <Hero />
+      </GlassPanel>
 
       <div ref={aboutRef}>
-        <motion.div initial={{ opacity: 0 }} animate={aboutAnimation}>
-          <Section
-            id='about'
-            title='About Me'
-            content={<About darkMode={darkMode} />}
-          />
-        </motion.div>
+        <GlassPanel id='about' title='About'>
+          <About />
+        </GlassPanel>
       </div>
 
       <div ref={projectsRef}>
-        <motion.div
-          className={``}
-          initial={{ opacity: 0 }}
-          animate={projectAnimation}
-        >
-          <Section
-            className={``}
-            id='projects'
-            title='Projects'
-            content={<Projects />}
-          />
-        </motion.div>
+        <GlassPanel id='projects' title='Projects'>
+          <Projects />
+        </GlassPanel>
       </div>
 
       <div ref={skillsRef}>
-        <motion.div initial={{ opacity: 0 }} animate={skillsAnimation}>
-          <Section id='skills' title='Skills' content={<Skills />} />
-        </motion.div>
-      </div>
-
-      <div ref={contactRef}>
-        <motion.div initial={{ opacity: 0 }} animate={contactAnimation}>
-          <Section
-            id='contact'
-            title='Contact Me'
-            content={<Contact />}
-            lastPage={true}
-          />
-        </motion.div>
+        <GlassPanel id='skills' title='Tools'>
+          <Skills />
+        </GlassPanel>
       </div>
     </main>
-  );
-};
+  )
+}

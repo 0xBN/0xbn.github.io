@@ -16,7 +16,7 @@ const MENU_ITEMS = [
   },
   {
     link: '#skills',
-    label: 'Skills',
+    label: 'Tools',
     svg: <GithubSvg />,
   },
   {

@@ -1,91 +1,54 @@
 # Personal Portfolio Website
 
-This project is a personal portfolio website used to showcase projects and share relevant experience. It is open sourced and can be forked. Users only need to edit a json file with relevant data (see section: How To Use).
+Personal portfolio at [https://0xbn.github.io](https://0xbn.github.io). Open source — fork it and edit your content in one place.
 
-## Deployed At: https://0xbn.github.io
+## Tech stack
 
+- [React](https://react.dev/) + [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [GitHub Pages](https://pages.github.com/) for hosting
 
-## Demonstration
+## Edit your content
 
-| Demo | Mobile | Desktop |
-| ----------- | ----------- | ----------- |
-| Dark/Light Mode | <img src="https://i.imgur.com/yexhYhI.gif" width="250px"/> | <img src="https://i.imgur.com/c33N0aX.gif" width="250px"/> |
-| Full scroll | <img src="https://i.imgur.com/FaVGGWd.gif" width="250px"/> | <img src="https://i.imgur.com/xKp7QUZ.gif" width="250px"/> |
+All copy, projects, stack, and tools live in [`src/data/site.js`](src/data/site.js):
 
+| Field | What to change |
+| ----- | -------------- |
+| `user` | Name, title, social links, resume URL, profile images |
+| `hero` | Greeting and headline lines |
+| `about.summary` | About paragraphs |
+| `skills` | Stack grid (icon keys match `src/data/skillIcons.js`) |
+| `tools` | Daily tools (defaults: Cursor, Claude, VS Code) |
+| `projects` | Project cards for the Projects section |
 
-## Purpose
-I built this to showcase my projects, but also to refine my React and Tailwind CSS skills.
+Profile images: `src/shared/img/`.
 
-## Skills Demonstrated
-- Responsive design (navigation bar and sections)
-- Carousel built without templates
-- Animation: scroll between sections, landing page
-- React components extraction
+## Local development
 
+```bash
+npm install
+npm start
+```
 
+Open [http://localhost:5173](http://localhost:5173).
 
+## Build and deploy
 
+```bash
+npm run build
+npm run deploy
+```
 
+`predeploy` clears `dist` and builds; `deploy` publishes `dist` to the `gh-pages` branch.
 
+## Notable features
 
-
-
-## Tech Stack
-- [ React ](https://github.com/facebook/create-react-app): Frontend
-- [ Tailwind CSS](https://tailwindcss.com/): Styling
-- [Github](https://github.com/): Deployment
-  
-
-
-## How to Use
-
-Edit your personal information in the userData.js (data is in json format). 
-| Directory | Edits |
-| ----------- | ----------- |
-| './src/pages' | section details |
-| './src/data/userData.js' | contact details, project cards, technology icons, and websites  |
-
-
-## Notable Features
-** Desktop(D) Only and Mobile(M) Only
-- Responsive Single Page App
-- Reusable components custom made
-- Project card carousel is custom made (no template)
-- Sticky section header
-- M: Animated hamburger button and menu
-- M: Dark theme toggle fixed to the top right
-- M: Minimalistic animation patterns and arrows
-- D: Smooth scroll to section
-- Technology buttons for project card links to official site or documentation
-
-
+- Responsive single-page layout with sticky section headers (desktop sidebar nav)
+- Dark / light theme
+- Scroll-triggered section reveals (respects `prefers-reduced-motion`)
+- Custom project carousel
 
 ## Icons
-- https://devicon.dev/
-- https://heroicons.dev/
 
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-
-
-### Deployment
-
-How to deploy documentation: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
+Skill icons are inline SVGs under `src/svgs/` (patterns inspired by [devicon](https://devicon.dev/) and brand assets).

@@ -1,40 +1,32 @@
-import { Footer, Main, Header } from 'components'
+import { Footer, Main, SiteHeader } from 'components'
 import { usePortfolioContext } from 'hooks/usePortfolioContext'
 
 function App() {
   const {
     darkMode,
-    toggleTheme,
+    themePreference,
+    setThemePreference,
     currentSection,
     setCurrentSection,
-    isWindowSmall,
-    pageLoaded,
   } = usePortfolioContext()
 
-  const testSettings = `overflow-clip`
-
   return (
-    <div
-      className={`App mx-auto min-h-screen scroll-smooth  
-       ${Boolean(darkMode) && 'dark'} md:flex
-      ${true && testSettings}`}
-    >
-      <Header
-        darkMode={darkMode}
-        toggleTheme={toggleTheme}
-        isWindowSmall={isWindowSmall}
-        currentSection={currentSection}
-        setCurrentSection={setCurrentSection}
-      />
+    <div className={`site-shell min-h-screen ${darkMode ? 'dark' : ''}`}>
+      <div className='site-bg' aria-hidden='true' />
 
-      <div className='md:col-span-full md:col-start-2 md:max-h-screen md:overflow-y-auto md:overflow-x-hidden'>
-        <Main
+      <div className='relative mx-auto max-w-2xl px-4 py-4 md:px-6 md:py-6'>
+        <SiteHeader
           darkMode={darkMode}
-          pageLoaded={pageLoaded}
-          isWindowSmall={isWindowSmall}
+          themePreference={themePreference}
+          setThemePreference={setThemePreference}
+          currentSection={currentSection}
           setCurrentSection={setCurrentSection}
         />
-        <Footer />
+
+        <div className='mt-4'>
+          <Main setCurrentSection={setCurrentSection} />
+          <Footer />
+        </div>
       </div>
     </div>
   )

@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 
-export const useDocumentTitle = (portfolioData) => {
+export const useDocumentTitle = (site) => {
   useEffect(() => {
-    const user = portfolioData?.user?.[0]
+    const { user } = site ?? {}
     const title = user
       ? `${user.firstName} ${user.lastName} | ${user.title}`
-      : 'Loading Profile...'
+      : 'Brian N. | Software Engineer'
 
     document.title = title
-  }, [portfolioData])
+  }, [site])
 }

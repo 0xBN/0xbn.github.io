@@ -8,14 +8,9 @@ import { ProjectSvg } from 'svgs'
 import { CardLinkOut } from './CardLinkOut'
 
 export const ProjectCard = ({ project }) => {
-  const newSettings = `border-2 border-white/30`
-  const oldSettings = ``
-
   return (
     <div
-      className={`m-4 flex w-full flex-col overflow-hidden rounded-xl bg-slate-200 p-2 text-xl shadow-md 
-      shadow-black/30 dark:bg-slate-700 md:w-11/12 md:p-4 lg:w-2/5 xl:w-1/3`}
-      id='projectCard'
+      className='project-card m-4 flex w-full flex-col overflow-hidden rounded-xl border border-neutral-200/80 bg-slate-100 p-2 text-xl shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-slate-800/90 dark:shadow-black/20 md:w-11/12 md:p-4 lg:w-2/5 xl:w-1/3'
       style={{ justifyContent: 'space-between' }}
     >
       <h3 className='text-center text-2xl font-bold' style={{ padding: '0' }}>
@@ -26,7 +21,7 @@ export const ProjectCard = ({ project }) => {
           customAlignment='flex w-full items-center justify-center gap-2'
         />
       </h3>
-      <div className={`grid w-full place-content-center`}>
+      <div className='grid w-full place-content-center'>
         <Carousel images={project.images} />
       </div>
 

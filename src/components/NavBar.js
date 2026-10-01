@@ -9,11 +9,12 @@ import {
 } from 'components'
 
 export const NavBar = ({
-  toggleTheme,
   darkMode,
   isWindowSmall,
   currentSection,
   setCurrentSection,
+  themePreference,
+  setThemePreference,
 }) => {
   const [showMenu, setShowMenu] = useState(false)
 
@@ -42,9 +43,8 @@ export const NavBar = ({
       />
 
       <ThemeToggle
-        darkMode={darkMode}
-        isWindowSmall={isWindowSmall}
-        toggleTheme={toggleTheme}
+        themePreference={themePreference}
+        setThemePreference={setThemePreference}
       />
     </nav>
   )
